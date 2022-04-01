@@ -36,7 +36,7 @@ const ButtonObj = styled.button<Pick<Props, 'height' | 'width' | 'primary' | 'se
 const Button: React.FC<Props> = props => {
 
     return (
-        <ButtonObj onClick={() => console.log('test')} secondary={props.secondary} primary={props.primary} width={props.width} height={props.height} className={props.className}>{props.text}</ButtonObj>
+        <ButtonObj onClick={props.onClick} secondary={props.secondary} primary={props.primary} width={props.width} height={props.height} className={props.className}>{props.text}</ButtonObj>
     )
 }
 
