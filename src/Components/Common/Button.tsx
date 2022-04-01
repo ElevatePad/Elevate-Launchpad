@@ -22,6 +22,7 @@ const ButtonObj = styled.button<Pick<Props, 'height' | 'width' | 'primary' | 'se
     font-weight: bold;
     -webkit-box-shadow: ${props => props.theme.button.boxShadow};
     box-shadow: ${props => props.theme.button.boxShadow};
+    cursor:'pointer';
 
     ${({ primary, theme, disabled }) => primary && `
     background: ${disabled ? theme.buttonDisabled : theme.button.primaryBG};

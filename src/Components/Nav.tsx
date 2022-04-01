@@ -68,6 +68,7 @@ const Nav:React.FC<Props> = props => {
     const { address, connectWallet, provider } = useWeb3();
 
     React.useEffect(() => {
+        connectWallet('injected');
         Interface.connectWallet(provider?.provider);
      },   
     [provider, address])

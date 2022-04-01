@@ -43,7 +43,7 @@ const Game = styled(Unity)`
     max-width: 100%;
     min-width: 100%;
     max-height: 80%;
-    margin-right: 75%;
+    margin-right: 80%;
     margin-top: 50px;
 `
 
