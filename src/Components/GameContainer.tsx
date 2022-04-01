@@ -49,10 +49,10 @@ const Game = styled(Unity)`
 
 const GameContainer: React.FC<Props> = props => {
     const unityContext = new UnityContext({
-        loaderUrl: "build/WhackABonk.loader.js",
-        dataUrl: "build/WhackABonk.data",
-        frameworkUrl: "build/WhackABonk.framework.js",
-        codeUrl: "build/WhackABonk.wasm",
+        loaderUrl: "assets/build/WhackABonk.loader.js",
+        dataUrl: "assets/build/WhackABonk.data",
+        frameworkUrl: "assets/build/WhackABonk.framework.js",
+        codeUrl: "assets/build/WhackABonk.wasm",
       });
 
     return (
