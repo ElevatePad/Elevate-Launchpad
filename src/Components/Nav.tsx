@@ -9,6 +9,8 @@ import * as _useWeb3 from '@3rdweb/react';
 
 interface Props {
     theme:string;
+    manualConnect: () => void;
+    address: string;
 }
 
 const Container = styled.div`
@@ -65,13 +67,6 @@ const PriceText = styled.h3`
 
 const Nav:React.FC<Props> = props => {
 
-    const { address, connectWallet, provider } = useWeb3();
-
-    React.useEffect(() => {
-        connectWallet('injected');
-        Interface.connectWallet(provider?.provider);
-     },   
-    [provider, address])
 
     return (
         <Container>
@@ -80,7 +75,7 @@ const Nav:React.FC<Props> = props => {
                 <PriceLogo src={priceLogo} />
                 <PriceText>$0.00023</PriceText>
             </PriceContainer>
-            <ConnectButton onClick={() => connectWallet('injected')} primary theme={props.theme} height='50px' width='200px' text={address != null ? address.substring(0,5) + "..." + address.substring(38,44) : "Connect"}/>
+            <ConnectButton onClick={props.manualConnect} primary theme={props.theme} height='50px' width='200px' text={props.address != null ? props.address.substring(0,5) + "..." + props.address.substring(38,44) : "Connect"}/>
         </Container>
     )
 }
