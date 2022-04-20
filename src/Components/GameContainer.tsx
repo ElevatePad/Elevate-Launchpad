@@ -43,17 +43,17 @@ const Game = styled(Unity)`
     max-width: 100%;
     min-width: 100%;
     max-height: 80%;
+    min-height: 50%;
     margin-top: 50px;
 `
 const WinContainer = styled.div`
     display: flex: 
     min-width: 60%;
     border: 1px dashed ${props => props.theme.textAlt};
-    min-height: 60px;
-    max-height: 60px;
     border-radius: ${props => props.theme.borderRounding};
     margin-bottom: 20px;
     margin-top: 20px;
+    min-height: 60px;
 `
 const WinMessage = styled.h3`
     max-width: 60%;
@@ -64,7 +64,14 @@ const WinMessage = styled.h3`
 `
 const MintButton = styled(Button)`
     margin-top: 12.5px;
-    margin-left: 5%;
+    margin-left: auto;
+    margin-right: 10px;
+    float: right;
+    @media screen and (max-width: 480px) {
+        float: none;
+        margin-left: 5px;
+        margin-top: 40px;
+    }
 `
 
 const GameContainer: React.FC<Props> = props => {
@@ -92,23 +99,28 @@ const GameContainer: React.FC<Props> = props => {
     React.useEffect(function () {
         unityContext.on("GameWon", function () {
           setGameWon(true);
-          alert('boom')
         });
       }, []);
 
     return (
         <Container>
             {
-                !error ? <Game unityContext={unityContext} /> : 
-                <ErrorContainer>
-                    <ErrorHeading>Ooops!</ErrorHeading>
-                    <ErrorDescription>{errorMessage}</ErrorDescription>
-                </ErrorContainer>
+                !error ? 
+                    <Game unityContext={unityContext} /> 
+                : 
+                    <ErrorContainer>
+                        <ErrorHeading>Ooops!</ErrorHeading>
+                        <ErrorDescription>{errorMessage}</ErrorDescription>
+                    </ErrorContainer>
+                }
+            {
+                gameWon ? 
+                    <WinContainer>
+                        <WinMessage>Congratulations, you've beat Whack a Bonk! The mint button will become enabled once the server authorises your address!</WinMessage>
+                        <MintButton primary width="100px" height="40px" text='Mint'></MintButton>
+                    </WinContainer>
+                : ''
             }
-            <WinContainer>
-                <WinMessage>Congratulations, you've beat Whack a Bonk! The mint button will become enabled once the server authorises your address!</WinMessage>
-                <MintButton primary width="30%" height="60%" text='Mint'></MintButton>
-            </WinContainer>
         </Container>
     )
 }
