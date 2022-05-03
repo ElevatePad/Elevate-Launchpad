@@ -15,10 +15,11 @@ export const GlobalStyles = createGlobalStyle<{theme: ThemeType}>`
         display: flex;
         flex-direction: column;
         justify-content: center;
+        min-height: auto;
         height: 100%;
         margin: 0;
         padding: 0;
-        font-family: 'MoreSugars-Regular', sans-serif;
+        font-family: 'Audiowide-Regular', sans-serif;
         transition: all 0.25s linear;
     }
  `

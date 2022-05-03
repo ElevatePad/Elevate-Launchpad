@@ -11,20 +11,8 @@ code {
 }
 
 @font-face {
-  font-family: 'Acids';
-  src: local('Acids'), url(./fonts/Acids.otf) format('opentype');
+  font-family: 'Audiowide-Regular.ttf';
+  src: local('Audiowide-Regular'), url(./Fonts/Audiowide-Regular.ttf) format('truetype');
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
-}
-@font-face {
-  font-family: 'MoreSugar-Extras';
-  src: local('MoreSugar-Extras'), url(./fonts/more_sugar_font/MoreSugar-Extras.otf) format('opentype');
-}
-@font-face {
-  font-family: 'MoreSugar-Regular';
-  src: local('MoreSugar-Regular'), url(./fonts/more_sugar_font/MoreSugar-Regular.otf) format('opentype');
-}
-@font-face {
-  font-family: 'MoreSugar-Thin';
-  src: local('MoreSugar-Thin'), url(./fonts/more_sugar_font/MoreSugar-Thin.otf) format('opentype');
 }

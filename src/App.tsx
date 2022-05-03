@@ -3,7 +3,13 @@ import { defaultTheme, lightTheme } from './Themes/theme';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from './Themes/globalStyles';
 import { ThirdwebWeb3Provider } from '@3rdweb/hooks';
-import Main from './Components/Main'
+import {
+  BrowserRouter as Router, 
+  Route,
+  Routes
+} from 'react-router-dom'
+import Main from './Components/Main';
+import Landing from './Components/Landing';
 import React from 'react';
 
 interface Props {
@@ -23,7 +29,12 @@ function App() {
     <ThirdwebWeb3Provider supportedChainIds={supportedChainIds} connectors={connectors}>
       <ThemeProvider theme={defaultTheme}>
         <GlobalStyles />
-        <Main theme={theme}/>
+        <Router>
+          <Routes>
+            <Route path='/' element={<Landing theme={theme}/>}/>
+            <Route path='/app' element={<Main theme={theme}/>}/>
+          </Routes>
+        </Router>
       </ThemeProvider>
     </ThirdwebWeb3Provider>
   );

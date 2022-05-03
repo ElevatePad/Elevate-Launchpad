@@ -18,18 +18,24 @@ const ButtonObj = styled.button<Pick<Props, 'height' | 'width' | 'primary' | 'se
     border: 0px;
     border-radius: ${props => props.theme.button.borderRounding};
     color: ${props => props.theme.button.textColor};
-    font-family: 'MoreSugar-Regular', sans-serif;
+    font-family: 'Audiowide-Regular', sans-serif;
     font-weight: bold;
     -webkit-box-shadow: ${props => props.theme.button.boxShadow};
     box-shadow: ${props => props.theme.button.boxShadow};
     cursor:'pointer';
 
+    &:hover {
+        -webkit-box-shadow: inset 0px 0px 25px 5px rgba(0,0,0,0.25);
+        box-shadow: inset 0px 0px 25px 5px rgba(0,0,0,0.25); 
+    }
+
     ${({ primary, theme, disabled }) => primary && `
     background: ${disabled ? theme.buttonDisabled : theme.button.primaryBG};
 `}
 
-    ${({ secondary, theme, disabled }) => secondary && `
-    background: ${disabled ? theme.buttonDisabled : theme.button.secondaryBG};
+    ${({ secondary, theme,  }) => secondary && `
+    background: transparent;
+    border: 1px solid ${theme.button.borderHighlight}
 `}
 `
 
