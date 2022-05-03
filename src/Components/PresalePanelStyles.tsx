@@ -14,6 +14,9 @@ const setStatusColors = (status: string) => {
         case 'Pending':
             return "background-color: #564724; color: #f0b90a";
             break;
+        case 'Voting':
+            return "background-color: #564724; color: #f0b90a";
+            break;
         case 'Open':
             return "background-color: #5BA45B; color: #1E6C1E";
             break;
@@ -143,7 +146,7 @@ export const ProgressContainer = Styled.div`
     display: flex;
     flex-wrap: wrap;
 `
-export const ProgressHeading = Styled.h3<Pick<Styles, | 'secondary' | 'highlight' >>`
+export const ProgressHeading = Styled.h3<Pick<Styles, | 'secondary' | 'highlight'>>`
     color: ${props => props.theme.textAlt};
     font-size: 12.5px;
     min-width: 40%;
@@ -159,7 +162,7 @@ export const ProgressHeading = Styled.h3<Pick<Styles, | 'secondary' | 'highlight
         margin-right: 10px;
     `}
 
-    ${({ highlight }) => highlight &&`
+    ${({ highlight }) => highlight && `
         color: ${props => props.them.textPrimary}
     `}
 `
