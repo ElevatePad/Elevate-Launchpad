@@ -36,7 +36,7 @@ export const Container = styled.div<Pick<Props, 'theme'>>`
     background-attachement: fixed;
 `
 
-export const Section = styled.div<Pick<Styles, | 'filled'>>`
+export const Section = styled.div`
     display: flex;
     flex-wrap: wrap;
     width: 60%;
@@ -44,18 +44,13 @@ export const Section = styled.div<Pick<Styles, | 'filled'>>`
     justify-content: center;
     margin-bottom: 20px;
 
+    border-bottom: 1px solid ${props => props.theme.textAlt};
+
     @media screen and (max-width: 730px) {
         min-width: 90%;
         margin-left: 5%;
         margin-right: 5%;
     }
-
-    ${({ filled, theme }) => filled && `
-        border-radius: ${theme.borderRounding};
-        background-color: #45464A;
-        border: 0;
-        box-shadow: ${theme.boxShadow};
-    `}
 `
 
 export const SectionHeading = styled.h3`

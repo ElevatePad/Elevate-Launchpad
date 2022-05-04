@@ -123,7 +123,7 @@ const Main:React.FC<Props> = props => {
               })
             }
           </Styled.Section>
-          <Styled.Section filled>
+          <Styled.Section>
             <Styled.SectionHeading>Projects Under Voting</Styled.SectionHeading>
             <Styled.SectionDescription>Vote if projects should launch using your ELEV tokens!</Styled.SectionDescription>
             {
@@ -161,7 +161,7 @@ const Main:React.FC<Props> = props => {
               })
             }
           </Styled.Section>
-          <Styled.Section filled>
+          <Styled.Section>
             <Styled.SectionHeading>Finished Projects</Styled.SectionHeading>
             <Styled.SectionDescription>Previous projects that have been completed or finalised.</Styled.SectionDescription>
             {
