@@ -2,7 +2,7 @@ import React from 'react';
 import Interface from '../metamask';
 import { useWeb3 } from '@3rdweb/hooks';
 import PresalePanel from '../Components/PresalePanel';
-import * as Styled from '../MainStyles';
+import * as Styled from './MainStyles';
 import Nav from '../Components/Nav';
 
 interface Props {
@@ -123,7 +123,7 @@ const Main:React.FC<Props> = props => {
               })
             }
           </Styled.Section>
-          <Styled.Section>
+          <Styled.Section filled>
             <Styled.SectionHeading>Projects Under Voting</Styled.SectionHeading>
             <Styled.SectionDescription>Vote if projects should launch using your ELEV tokens!</Styled.SectionDescription>
             {
@@ -161,7 +161,7 @@ const Main:React.FC<Props> = props => {
               })
             }
           </Styled.Section>
-          <Styled.Section>
+          <Styled.Section filled>
             <Styled.SectionHeading>Finished Projects</Styled.SectionHeading>
             <Styled.SectionDescription>Previous projects that have been completed or finalised.</Styled.SectionDescription>
             {

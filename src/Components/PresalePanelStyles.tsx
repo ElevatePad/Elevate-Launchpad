@@ -37,8 +37,11 @@ export const Container = Styled.div`
     margin: 50px;
     border-radius: ${props => props.theme.borderRounding};
     box-shadow: ${props => props.theme.boxShadow};
+    font-weight: lighter;
+    margin-top: 0px;
+    marin-bottom: 5px;
 
-    @media screen and (max-width: 475px) {
+    @media screen and (max-width: 730px) {
         min-width: 95%;
         margin-left: 2.5%;
         margin-right: 2.5%;
@@ -57,6 +60,7 @@ export const PresaleName = Styled.h3`
     margin-top: 12.5px;
     margin-bottom: 0px;
     width: 50%;
+    font-weight: inherit;
 `
 export const StatusContainer = Styled.div<Pick<Styles, | 'status' | 'secondary'>>`
     margin-left: auto;
@@ -74,6 +78,7 @@ export const Status = Styled.h3`
     padding-left: 5px;
     padding-right: 5px;
     text-align: center;
+    font-weight: bold;
 `
 export const InfoHeadingContainer = Styled.div`
     width: 70%;
@@ -90,6 +95,7 @@ export const InfoLink = Styled.img`
     height: 100%;
     margin: 5px;
     height: 25px;
+    font-weight: inherit;
 `
 export const LogoContainer = Styled.div`
     max-width: 20%;
@@ -112,6 +118,7 @@ export const LiquidityType = Styled.h3`
     text-align:center;
     margin-top: 5px;
     margin-bottom: 5px;
+    font-weight: inherit;
 `
 export const InfoContainer = Styled.div`
     width: 100%;
@@ -139,6 +146,7 @@ export const InfoValue = Styled.h3`
     text-align: center;
     font-size: 15px;
     max-width: 100%;
+    font-weight: inherit;
     margin-top: 2.5px;
 `
 export const ProgressContainer = Styled.div`
@@ -151,10 +159,11 @@ export const ProgressHeading = Styled.h3<Pick<Styles, | 'secondary' | 'highlight
     font-size: 12.5px;
     min-width: 40%;
     text-align: left;
-    font-weight: light;
+    font-weight: inherit;
     margin: 0px;
     margin-left: 10px;
     margin-bottom: 10px;
+
 
     ${({ secondary }) => secondary && `
         text-align: right;
@@ -169,6 +178,7 @@ export const ProgressHeading = Styled.h3<Pick<Styles, | 'secondary' | 'highlight
 export const Progress = Styled.progress`
     webkit-appearance: none;
     appearance: none;
+    
     width: 95%;
     margin-left: 2.5%;
     margin-right: 2.5%;

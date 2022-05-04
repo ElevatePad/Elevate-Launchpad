@@ -1,11 +1,13 @@
 import styled from 'styled-components';
-import Button from './Components/Common/Button'
+import Button from './Common/Button'
 
 interface Props {
     theme:string;
 }
 
-
+interface Styles {
+    filled?: boolean
+}
 
 export const Container = styled.div<Pick<Props, 'theme'>>`
   display: flex;
@@ -27,33 +29,53 @@ export const Container = styled.div<Pick<Props, 'theme'>>`
     top: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.2;
+    opacity: 0.25;
     background-image: url(background-dark.png);
     background-position: center;
     background-size: cover;
     background-attachement: fixed;
 `
 
-export const Section = styled.div`
+export const Section = styled.div<Pick<Styles, | 'filled'>>`
     display: flex;
     flex-wrap: wrap;
+    width: 60%;
+    margin-left: 20%; 
     justify-content: center;
     margin-bottom: 20px;
+
+    @media screen and (max-width: 730px) {
+        min-width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    ${({ filled, theme }) => filled && `
+        border-radius: ${theme.borderRounding};
+        background-color: #45464A;
+        border: 0;
+        box-shadow: ${theme.boxShadow};
+    `}
 `
 
 export const SectionHeading = styled.h3`
     width: 100%;
     text-align: center;
     margin: 0;
-    font-size: 17.5px;
-    color: ${props => props.theme.textPrimary};
+    font-size: 40px;
+    font-weight: bold;
+    color: ${props => props.theme.textHighlight};
+    margin-top: 25px;
 `
 export const SectionDescription = styled.p`
-    font-size: 15px;
+    font-size: 22.5px;
+    font-weight: bold;
     text-align: center;
-    width: 100%;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
     color: ${props => props.theme.textAlt}
 `
 export const SignupButton = styled(Button)`
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 `

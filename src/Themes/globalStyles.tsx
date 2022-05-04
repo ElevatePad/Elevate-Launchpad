@@ -19,7 +19,7 @@ export const GlobalStyles = createGlobalStyle<{theme: ThemeType}>`
         height: 100%;
         margin: 0;
         padding: 0;
-        font-family: 'Audiowide-Regular', sans-serif;
+        font-family: 'Gill Sans', sans-serif;
         transition: all 0.25s linear;
     }
  `
