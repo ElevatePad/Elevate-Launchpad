@@ -7,6 +7,8 @@ interface Props {
 
 interface Styles {
     filled?: boolean
+    width?: string;
+    projectItem?: boolean;
 }
 
 export const Container = styled.div<Pick<Props, 'theme'>>`
@@ -39,12 +41,10 @@ export const Container = styled.div<Pick<Props, 'theme'>>`
 export const Section = styled.div`
     display: flex;
     flex-wrap: wrap;
-    width: 60%;
-    margin-left: 20%; 
-    justify-content: center;
+    width: 90%;
+    margin-left: 5%;
     margin-bottom: 20px;
 
-    border-bottom: 1px solid ${props => props.theme.textAlt};
 
     @media screen and (max-width: 730px) {
         min-width: 90%;
@@ -55,19 +55,24 @@ export const Section = styled.div`
 
 export const SectionHeading = styled.h3`
     width: 100%;
-    text-align: center;
+    text-align: left;
     margin: 0;
     font-size: 40px;
     font-weight: bold;
     color: ${props => props.theme.textHighlight};
     margin-top: 25px;
 `
+export const SectionRow = styled.div<Pick<Styles, | 'width' |'projectItem' >>`
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+`
+
 export const SectionDescription = styled.p`
     font-size: 22.5px;
     font-weight: bold;
-    text-align: center;
-    width: 80%;
-    margin-left: 10%;
+    text-align: left;
+    width: 40%;
     margin-right: 10%;
     color: ${props => props.theme.textAlt}
 `

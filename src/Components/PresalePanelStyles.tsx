@@ -34,12 +34,11 @@ export const Container = Styled.div`
     background-color: ${props => props.theme.bodyLighter};
     display: flex;
     flex-wrap: wrap;
-    margin: 50px;
     border-radius: ${props => props.theme.borderRounding};
     box-shadow: ${props => props.theme.boxShadow};
     font-weight: lighter;
-    margin-top: 0px;
-    marin-bottom: 5px;
+    margin-top: 20px;
+    margin-right: 20px;
 
     @media screen and (max-width: 730px) {
         min-width: 95%;

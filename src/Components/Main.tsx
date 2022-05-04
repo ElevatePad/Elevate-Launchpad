@@ -6,7 +6,7 @@ import * as Styled from './MainStyles';
 import Nav from '../Components/Nav';
 
 interface Props {
-    theme: string;
+  theme: string;
 }
 
 const MockData = [
@@ -63,29 +63,47 @@ const MockData = [
     status: 'Open',
     completedPercent: 20,
     particpents: 185
-  }
+  },
+  {
+    cap: 2011,
+    swapRate: '1 ETH = 5000',
+    projectName: 'BAYC',
+    startDate: '2/4/2022',
+    status: 'Open',
+    completedPercent: 80,
+    particpents: 120
+  },
+  {
+    cap: 2011,
+    swapRate: '1 ETH = 5000',
+    projectName: 'BAYC',
+    startDate: '2/4/2022',
+    status: 'Open',
+    completedPercent: 80,
+    particpents: 120
+  },
 ]
 
-const Main:React.FC<Props> = props => {
+const Main: React.FC<Props> = props => {
 
   const { address, connectWallet, provider } = useWeb3();
   const pendingPresales = MockData.filter(p => p.status == 'Pending');
   const votingPresales = MockData.filter(p => p.status == 'Voting');
   const openPresales = MockData.filter(p => p.status == 'Open');
   const completedPresales = MockData.filter(p => p.status == 'Completed');
-  
+
 
   React.useEffect(() => {
-      if (address == null) {
-          connectWallet('injected');
-          Interface.connectWallet(provider?.provider);
-      }
-   },   
-  [])
+    if (address == null) {
+      connectWallet('injected');
+      Interface.connectWallet(provider?.provider);
+    }
+  },
+    [])
 
   React.useEffect(() => {
-      if(address != null) {
-      }
+    if (address != null) {
+    }
   }, [address])
 
   const manualConnect = () => {
@@ -96,92 +114,119 @@ const Main:React.FC<Props> = props => {
   }
 
 
-    return (
-      <Styled.Container theme={props.theme}>
-          <Nav theme={props.theme}/>
-          <Styled.Section>
-            <Styled.SectionHeading>Want to see your project here?</Styled.SectionHeading>
-            <Styled.SectionDescription>Complete our onboarding process to share your project within a safe launchpad environment</Styled.SectionDescription>
-            <Styled.SignupButton secondary text='Onboard your project!' width='175px' height='35px'/>
-          </Styled.Section>
-          <Styled.Section>
-            <Styled.SectionHeading>Open Projects</Styled.SectionHeading>
-            <Styled.SectionDescription>Contribute to open Projects!</Styled.SectionDescription>
-            {
-              openPresales.map(p => {
-                return (
-                  <PresalePanel 
-                    theme={props.theme} 
-                    cap={p.cap} 
-                    swapRate={p.swapRate} 
-                    status={p.status} 
-                    projectName={p.projectName} 
-                    participents={p.particpents}
-                    progress={p.completedPercent}
-                  />
-                )
-              })
-            }
-          </Styled.Section>
-          <Styled.Section>
-            <Styled.SectionHeading>Projects Under Voting</Styled.SectionHeading>
-            <Styled.SectionDescription>Vote if projects should launch using your ELEV tokens!</Styled.SectionDescription>
-            {
-              votingPresales.map(p => {
-                return (
-                  <PresalePanel 
-                    theme={props.theme} 
-                    cap={p.cap} 
-                    swapRate={p.swapRate} 
-                    status={p.status} 
-                    projectName={p.projectName} 
-                    participents={p.particpents}
-                    progress={p.completedPercent}
-                  />
-                )
-              })
-            }
-          </Styled.Section>
-          <Styled.Section>
-            <Styled.SectionHeading>Pending Projects</Styled.SectionHeading>
-            <Styled.SectionDescription>Projects approved for launch but pending launch date!</Styled.SectionDescription>
-            {
-              pendingPresales.map(p => {
-                return (
-                  <PresalePanel 
-                    theme={props.theme} 
-                    cap={p.cap} 
-                    swapRate={p.swapRate} 
-                    status={p.status} 
-                    projectName={p.projectName} 
-                    progress={p.completedPercent}
-                    participents={p.particpents}
-                  />
-                )
-              })
-            }
-          </Styled.Section>
-          <Styled.Section>
-            <Styled.SectionHeading>Finished Projects</Styled.SectionHeading>
-            <Styled.SectionDescription>Previous projects that have been completed or finalised.</Styled.SectionDescription>
-            {
-              completedPresales.map(p => {
-                return (
-                  <PresalePanel 
-                    theme={props.theme} 
-                    cap={p.cap} 
-                    swapRate={p.swapRate} 
-                    status={p.status} 
-                    projectName={p.projectName} 
-                    progress={p.completedPercent}
-                    participents={p.particpents}
-                  />
-                )
-              })
-            }
-          </Styled.Section>
-        </Styled.Container>
-    )
+  return (
+    <Styled.Container theme={props.theme}>
+      <Nav theme={props.theme} />
+      <Styled.Section>
+        <Styled.SectionRow>
+          <Styled.SectionHeading>Want to see your project here?</Styled.SectionHeading>
+        </Styled.SectionRow>
+        <Styled.SectionRow>
+          <Styled.SectionDescription>Complete our onboarding process to share your project within a safe launchpad environment</Styled.SectionDescription>
+        </Styled.SectionRow>
+        <Styled.SectionRow>
+          <Styled.SignupButton secondary text='Onboard your project!' width='175px' height='35px' />
+        </Styled.SectionRow>
+      </Styled.Section>
+      <Styled.Section>
+        <Styled.SectionRow>
+          <Styled.SectionHeading>Open Projects</Styled.SectionHeading>
+        </Styled.SectionRow>
+        <Styled.SectionRow>
+          <Styled.SectionDescription>Contribute to open Projects!</Styled.SectionDescription>
+        </Styled.SectionRow>
+        <Styled.SectionRow>
+          {
+            openPresales.map(p => {
+              return (
+                <PresalePanel
+                  theme={props.theme}
+                  cap={p.cap}
+                  swapRate={p.swapRate}
+                  status={p.status}
+                  projectName={p.projectName}
+                  participents={p.particpents}
+                  progress={p.completedPercent}
+                />
+              )
+            })
+          }
+        </Styled.SectionRow>
+      </Styled.Section>
+      <Styled.Section>
+        <Styled.SectionRow>
+          <Styled.SectionHeading>Projects Under Voting</Styled.SectionHeading>
+        </Styled.SectionRow>
+        <Styled.SectionRow>
+          <Styled.SectionDescription>Vote if projects should launch using your ELEV tokens!</Styled.SectionDescription>
+        </Styled.SectionRow>
+        <Styled.SectionRow>
+          {
+            votingPresales.map(p => {
+              return (
+                <PresalePanel
+                  theme={props.theme}
+                  cap={p.cap}
+                  swapRate={p.swapRate}
+                  status={p.status}
+                  projectName={p.projectName}
+                  participents={p.particpents}
+                  progress={p.completedPercent}
+                />
+              )
+            })
+          }
+        </Styled.SectionRow>
+      </Styled.Section>
+      <Styled.Section>
+        <Styled.SectionHeading>Pending Projects</Styled.SectionHeading>
+        <Styled.SectionDescription>Projects approved for launch but pending launch date!</Styled.SectionDescription>
+        <Styled.SectionRow>
+        {
+          pendingPresales.map(p => {
+            return (
+              <PresalePanel
+                theme={props.theme}
+                cap={p.cap}
+                swapRate={p.swapRate}
+                status={p.status}
+                projectName={p.projectName}
+                progress={p.completedPercent}
+                participents={p.particpents}
+              />
+            )
+          })
+        }
+        </Styled.SectionRow>
+      </Styled.Section>
+      <Styled.Section>
+        <Styled.SectionRow>
+          <Styled.SectionHeading>Finished Projects</Styled.SectionHeading>
+        </Styled.SectionRow>
+        <Styled.SectionRow>
+          <Styled.SectionDescription>Previous projects that have been completed or finalised.</Styled.SectionDescription>
+        </Styled.SectionRow>
+        <Styled.SectionRow>
+
+          {
+            completedPresales.map(p => {
+              return (
+                <PresalePanel
+                  theme={props.theme}
+                  cap={p.cap}
+                  swapRate={p.swapRate}
+                  status={p.status}
+                  projectName={p.projectName}
+                  progress={p.completedPercent}
+                  participents={p.particpents}
+                />
+              )
+            })
+          }
+        </Styled.SectionRow>
+      </Styled.Section>
+    </Styled.Container>
+  )
 }
 
 export default Main
