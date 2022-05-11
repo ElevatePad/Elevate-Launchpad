@@ -1,11 +1,15 @@
 import styled from 'styled-components';
-import Button from './Components/Common/Button'
+import Button from './Common/Button'
 
 interface Props {
     theme:string;
 }
 
-
+interface Styles {
+    filled?: boolean
+    width?: string;
+    projectItem?: boolean;
+}
 
 export const Container = styled.div<Pick<Props, 'theme'>>`
   display: flex;
@@ -27,7 +31,7 @@ export const Container = styled.div<Pick<Props, 'theme'>>`
     top: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.2;
+    opacity: 0.25;
     background-image: url(background-dark.png);
     background-position: center;
     background-size: cover;
@@ -37,23 +41,41 @@ export const Container = styled.div<Pick<Props, 'theme'>>`
 export const Section = styled.div`
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    width: 90%;
+    margin-left: 5%;
     margin-bottom: 20px;
+
+
+    @media screen and (max-width: 730px) {
+        min-width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
 `
 
 export const SectionHeading = styled.h3`
     width: 100%;
-    text-align: center;
+    text-align: left;
     margin: 0;
-    font-size: 17.5px;
-    color: ${props => props.theme.textPrimary};
+    font-size: 40px;
+    font-weight: bold;
+    color: ${props => props.theme.textHighlight};
+    margin-top: 25px;
 `
-export const SectionDescription = styled.p`
-    font-size: 15px;
-    text-align: center;
+export const SectionRow = styled.div<Pick<Styles, | 'width' |'projectItem' >>`
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+`
+
+export const SectionDescription = styled.p`
+    font-size: 22.5px;
+    font-weight: bold;
+    text-align: left;
+    width: 40%;
+    margin-right: 10%;
     color: ${props => props.theme.textAlt}
 `
 export const SignupButton = styled(Button)`
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 `

@@ -1,23 +1,24 @@
 export const defaultTheme = { 
-    body: '#3B3D40',
+    body: '#27282A',
     bodyLighter: '#27282A',
     textPrimary: '#EBFFFA',
     textAlt: '#CAD9E3',
+    textHighlight: '#05d19c',
     borderRounding: '7.5px',
     priceBackground: '#464C5D',
     boxShadow: '0px 0px 15px 10px rgba(0,0,0,0.2)',
 
     button: {
-        primaryBG: 'linear-gradient(90deg, rgba(83,92,141,1) 0%, rgba(18,29,94,1) 100%);',
+        primaryBG: 'linear-gradient(45deg, rgba(141,90,255,1) 0%, rgba(89,42,211,1) 100%);',
         transparentBG: 'transparent',
         borderRounding: '15px',
         textColor: 'white',
         boxShadow: '0px 0px 15px 10px rgba(0,0,0,0.15)',
-        borderHighlight: '#01d19b'
+        borderHighlight: '#05d19c'
     }
 }
 
-// green - 01d19b
+// green - 05d19c
 // blue - 009ce1
 
 export const lightTheme = { 
