@@ -71,14 +71,25 @@ const PresalePanel: React.FC<Props> = props => {
             </Styled.ProgressContainer>
             {
                 props.status == 'Open' ?
-                    <Styled.DepositAmountContainer>
-                        <Styled.DepositAmountHeading>Deposit</Styled.DepositAmountHeading>
+                    <Styled.BottomContainer>
+                        <Styled.BottomHeading>Deposit</Styled.BottomHeading>
                         <Styled.DepositAmountInputContainer active={depositValue == null ? false : true}>
                             <Styled.DepositAmountInput onChange={e => setDepositValue(e)} placeholder='0.00' />
-                            <Styled.DespostiAmountInputLabel >ETH</Styled.DespostiAmountInputLabel>
+                            <Styled.DespositAmountInputLabel>ETH</Styled.DespositAmountInputLabel>
                         </Styled.DepositAmountInputContainer>
                         <Styled.DepositButton theme={props.theme} width='35%' text='Deposit' height='30px' primary />
-                    </Styled.DepositAmountContainer>
+                    </Styled.BottomContainer>
+                : ''
+            }
+            { props.status == 'Completed' ? 
+                <Styled.BottomContainer>
+                    <Styled.BottomHeading>Claim</Styled.BottomHeading>
+                    <Styled.ClaimContainer>
+                        <Styled.ClaimLabel>{`${props.projectName} Tokens for Claim:`}</Styled.ClaimLabel>
+                        <Styled.ClaimHighlight>{'12312121.111'}</Styled.ClaimHighlight>
+                        <Styled.ClaimButton theme={props.theme} width='25%' text='Claim' height='30px' primary />
+                    </Styled.ClaimContainer>
+                </Styled.BottomContainer>
                 : ''
             }
 

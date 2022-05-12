@@ -203,15 +203,16 @@ export const Highlight = Styled.h3`
     color: ${props => props.theme.button.borderHighlight};
 `
 
-export const DepositAmountContainer = Styled.div`
+export const BottomContainer = Styled.div`
     width: 90%; 
     margin-left: 5%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-start;
     border-top: 0.75px dashed ${props => props.theme.textHighlight};
 `
 
-export const DepositAmountHeading = Styled.h3`
+export const BottomHeading = Styled.h3`
     margin: 0px;
     width: 100%;
     margin-top: 7.5px;
@@ -236,7 +237,7 @@ export const DepositAmountInputContainer = Styled.div<Pick<Styles, 'active'>>`
 export const DepositAmountInput = Styled.input`
     border: hidden;
     outline: none;
-    max-width: 75%;
+    max-width: 69%;
     color: ${props => props.theme.body};
     font-size: 17.5px;
     height: 17.5px;
@@ -244,15 +245,45 @@ export const DepositAmountInput = Styled.input`
     margin-left: 5px;
     background-color: transparent;
 `
-export const DespostiAmountInputLabel = Styled.label`
+export const DespositAmountInputLabel = Styled.h3`
     font-size: 15px;
+    width: 30%;
+    text-align: right;
+    margin-bottom: 7.5px;
     margin-top: 7.5px;
-    margin-bottom: 10px;
+    margin-right: 5px;
     font-weight: bold;
     color: ${props => props.theme.body};
 `
 export const DepositButton = Styled(Button)`
     margin-top: 12.5px;
+    margin-left: auto;
+    margin-right: 5%;
+`
+export const ClaimContainer = Styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: center;
+`
+export const ClaimLabel = Styled.h3`
+    margin-top: 5px;
+    margin-left: 15px;
+    width: 33%;
+    font-size: 12.5px;
+    color: ${props => props.theme.textPrimary};
+    vertical-align: middle;
+`
+export const ClaimHighlight = Styled.h3`
+    width: 33%
+    margin: 0px;
+    margin-top: 5px;
+    max-width: 25%;
+    margin-left: 5px;
+    overflow-wrap: break-word;
+    font-size: 15px;
+    color: ${props => props.theme.textHighlight};
+`
+export const ClaimButton = Styled(Button)`
     margin-left: auto;
     margin-right: 5%;
 `
