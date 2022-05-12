@@ -7,6 +7,7 @@ export const defaultTheme = {
     borderRounding: '7.5px',
     priceBackground: '#464C5D',
     boxShadow: '0px 0px 15px 10px rgba(0,0,0,0.2)',
+    error: '#CE2751',
 
     button: {
         primaryBG: 'linear-gradient(45deg, rgba(141,90,255,1) 0%, rgba(89,42,211,1) 100%);',
