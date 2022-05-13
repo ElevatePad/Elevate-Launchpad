@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import React from 'react';
 import Button from '../Components/Common/Button'
 import LogoImage from '../Images/Logo-Dark.png';
+import { Link } from 'react-router-dom';
 
 interface Props {
     theme: string;
@@ -19,7 +20,7 @@ const NavContainer = styled.div<Pick<Styles, | 'scrolled'>>`
     margin-bottom: 50px;
 
 
-    ${({ scrolled })  => scrolled && `
+    ${({ scrolled }) => scrolled && `
         position: fixed;
         top: 0;
         left: 0;
@@ -46,11 +47,20 @@ const ConnectButton = styled(Button)`
     font-size: 15px;
 `
 const OnboardButton = styled(Button)`
-    margin-left: auto;
     margin-top: 20px;
     font-size: 12.5px;
 `
+const NavItem = styled.h3`
+    font-size: 15px;
+    color: ${props => props.theme.textPrimary};
+    margin: 0px;
+    margin-top: 25px;
+    margin-right: 20px;
 
+    &:hover {
+        color: ${props => props.theme.textHighlight};
+    }
+`
 
 
 const Nav: React.FC<Props> = props => {
@@ -73,6 +83,9 @@ const Nav: React.FC<Props> = props => {
         <NavContainer scrolled={scrolled}>
             <InnerContainer>
                 <Logo src={LogoImage} />
+                <Link style={{ 'marginLeft': 'auto' }} to='/staking'>
+                    <NavItem>Staking</NavItem>
+                </Link>
                 <OnboardButton secondary width='120px' height='30px' text='Oboard Now' />
                 <ConnectButton primary width='120px' height='40px' text='Connect' />
             </InnerContainer>

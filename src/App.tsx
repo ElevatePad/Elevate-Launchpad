@@ -11,6 +11,7 @@ import {
 import Main from './Components/Main';
 import Landing from './Components/Landing';
 import React from 'react';
+import UnderConstruction from './Components/UnderConstruction';
 
 interface Props {
   theme: string;
@@ -33,6 +34,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Landing theme={theme}/>}/>
             <Route path='/app' element={<Main theme={theme}/>}/>
+            <Route path='/staking' element={<UnderConstruction theme={theme}/>}/>
           </Routes>
         </Router>
       </ThemeProvider>
