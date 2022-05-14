@@ -112,7 +112,7 @@ const Landing: React.FC<Props> = props => {
                     <InfoHeading>Elevate Incubator</InfoHeading>
                     <InfoDescription>Create and find vetted projects that have undergone KYC checks and verification from the Elevate team. </InfoDescription>
                     <div style={{ 'minWidth': '100%' }}>
-                        <Link to='/app'>
+                        <Link to='/ido'>
                             <AppButton text='Launch App' primary height='40px' width='120px' />
                         </Link>
                     </div>
