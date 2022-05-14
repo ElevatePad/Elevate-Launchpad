@@ -4,6 +4,7 @@ import LogoDark from '../Images/Logo-Dark.png';
 import Button from '../Components/Common/Button';
 import LaunchPadGraphic from '../Images/LaunchPadGraphic.png';
 import { Link } from 'react-router-dom';
+import Nav from '../Components/Nav';
 
 interface Props {
     theme: string;
@@ -99,12 +100,13 @@ const Landing: React.FC<Props> = props => {
 
     return (
         <Container>
-            <LandingNav>
+            {/* <LandingNav>
                 <Logo src={LogoDark} />
                 <Link style={{ 'marginLeft': 'auto' }} to='/app'>
                     <AppButton primary text='Launch App' height='40px' width='120px' />
                 </Link>
-            </LandingNav>
+            </LandingNav> */}
+            <Nav pageName='Landing' theme={props.theme}/>
             <InnerContainer>
                 <InfoContainer>
                     <InfoHeading>Elevate Incubator</InfoHeading>

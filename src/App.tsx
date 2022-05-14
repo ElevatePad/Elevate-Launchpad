@@ -33,8 +33,12 @@ function App() {
         <Router>
           <Routes>
             <Route path='/' element={<Landing theme={theme}/>}/>
-            <Route path='/app' element={<Main theme={theme}/>}/>
+            <Route path='/ido' element={<Main theme={theme}/>}/>
             <Route path='/staking' element={<UnderConstruction theme={theme}/>}/>
+            <Route path='/meme-factory' element={<UnderConstruction theme={theme}/>}/>
+            <Route path='/liquidity-lock' element={<UnderConstruction theme={theme}/>}/>
+            <Route path='/farm' element={<UnderConstruction theme={theme}/>}/>
+            <Route path='/dashbaord' element={<UnderConstruction theme={theme}/>}/>
           </Routes>
         </Router>
       </ThemeProvider>
