@@ -24,7 +24,7 @@ const OpenAnimationFrames = keyframes`
 `
 const CloseAnimationFrames = keyframes`
     to {
-        margin-top: -0px;
+        margin-top: -10px;
         min-width: 0px;
         min-height: 0px;
         max-height: 0px;
@@ -36,7 +36,6 @@ const CloseAnimationFrames = keyframes`
         margin-top: 25px;
         min-width: 200px;
         min-height: 226px;
-        max-height: 500px;
         margin-left: -200px;
         -webkit-box-shadow: 0px 0px 50px 5000px rgba(0,0,0,0.5); 
         box-shadow: 0px 0px 50px 5000px rgba(0,0,0,0.5);
@@ -46,7 +45,7 @@ const OpenAnimation = styled.div<Pick<Props, 'open'>>`
     animation: ${css`${OpenAnimationFrames}`} .25s ease-in;
 `
 const CloseAnimation = styled.div`
-    animation: ${css`${CloseAnimationFrames}`} .25s ease-out;
+    animation: ${css`${CloseAnimationFrames}`} .5s;
 `
 
 const Container = styled(OpenAnimation) <Pick<Props, 'open'>>`
@@ -73,7 +72,6 @@ const Closed = styled(CloseAnimation) <Pick<Props, 'open'>>`
     position: relative;
     z-index: -100000000;
     border-radius: ${props => props.theme.borderRounding};
- 
 `
 
 const LinkTo = styled(Link)`
