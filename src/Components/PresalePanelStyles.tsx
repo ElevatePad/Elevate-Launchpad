@@ -33,7 +33,7 @@ const setStatusColors = (status: string) => {
 export const Container = Styled.div`
     min-width: 400px;
     max-width: 400px;
-    background-color: ${props => props.theme.bodyLighter};
+    background-color: ${props => props.theme.body};
     display: flex;
     flex-wrap: wrap;
     border-radius: ${props => props.theme.borderRounding};

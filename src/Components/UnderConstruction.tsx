@@ -6,6 +6,7 @@ import LogoDark from '../Images/Logo-Dark.png';
 import Button from '../Components/Common/Button';
 import Construction from '../Images/construction.png'
 import { Link } from 'react-router-dom';
+import Nav from './Nav';
 
 interface Props {
     theme: string;
@@ -86,12 +87,7 @@ const UnderConstruction: React.FC<Props> = props => {
 
     return (
         <Container>
-            <LandingNav>
-                <Logo src={LogoDark} />
-                <Link style={{ 'marginLeft': 'auto' }} to='/'>
-                    <AppButton primary text='Home' height='40px' width='120px' />
-                </Link>
-            </LandingNav>
+            <Nav pageName='' theme={props.theme}/>
             <ImageContainer>
                 <Image src={Construction} />
             </ImageContainer>

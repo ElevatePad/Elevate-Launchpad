@@ -1,9 +1,9 @@
 import React from 'react';
-import Interface from '../metamask';
+import Interface from '../../metamask';
 import { useWeb3 } from '@3rdweb/hooks';
-import PresalePanel from '../Components/PresalePanel';
-import * as Styled from './MainStyles';
-import Nav from '../Components/Nav';
+import PresalePanel from '../PresalePanel';
+import * as Styled from '../Styles/MainStyles';
+import Nav from '../Nav';
 
 interface Props {
   theme: string;

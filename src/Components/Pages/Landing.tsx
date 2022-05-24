@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components';
 import LogoDark from '../Images/Logo-Dark.png';
-import Button from '../Components/Common/Button';
-import LaunchPadGraphic from '../Images/LaunchPadGraphic.png';
+import Button from '../Common/Button';
+import LaunchPadGraphic from '../../Images/LaunchPadGraphic.png';
 import { Link } from 'react-router-dom';
-import Nav from '../Components/Nav';
+import Nav from '../Nav';
 
 interface Props {
     theme: string;

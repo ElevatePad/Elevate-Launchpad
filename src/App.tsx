@@ -8,10 +8,11 @@ import {
   Route,
   Routes
 } from 'react-router-dom'
-import Main from './Components/Main';
-import Landing from './Components/Landing';
+import Main from './Components/Pages/Main';
+import Landing from './Components/Pages/Landing';
 import React from 'react';
 import UnderConstruction from './Components/UnderConstruction';
+import LockerLanding from './Components/Pages/LockerLanding';
 
 interface Props {
   theme: string;
@@ -36,9 +37,9 @@ function App() {
             <Route path='/ido' element={<Main theme={theme}/>}/>
             <Route path='/staking' element={<UnderConstruction theme={theme}/>}/>
             <Route path='/meme-factory' element={<UnderConstruction theme={theme}/>}/>
-            <Route path='/liquidity-lock' element={<UnderConstruction theme={theme}/>}/>
+            <Route path='/liquidity-lock' element={<LockerLanding theme={theme}/>}/>
             <Route path='/farm' element={<UnderConstruction theme={theme}/>}/>
-            <Route path='/dashbaord' element={<UnderConstruction theme={theme}/>}/>
+            <Route path='/dashboard' element={<UnderConstruction theme={theme}/>}/>
           </Routes>
         </Router>
       </ThemeProvider>

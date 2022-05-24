@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Button from './Common/Button'
+import Button from '../Common/Button'
 
 interface Props {
     theme:string;

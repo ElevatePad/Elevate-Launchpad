@@ -1,6 +1,6 @@
 export const defaultTheme = { 
     body: '#27282A',
-    bodyLighter: '#27282A',
+    bodyLighter: '#45464A',
     textPrimary: '#EBFFFA',
     textAlt: '#CAD9E3',
     textHighlight: '#05d19c',

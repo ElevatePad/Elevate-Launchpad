@@ -15,6 +15,7 @@ interface Props {
 interface Styles {
     scrolled?: boolean;
     open: boolean;
+    active?: boolean;
 }
 
 const NavContainer = styled.div<Pick<Styles, | 'scrolled'>>`
@@ -23,7 +24,7 @@ const NavContainer = styled.div<Pick<Styles, | 'scrolled'>>`
     background-color: #28282A;
     box-shadow: ${props => props.theme.boxShadow};
     margin-bottom: 50px;
-
+    z-index: 10000000000;
 
     ${({ scrolled }) => scrolled && `
         position: fixed;
@@ -58,9 +59,9 @@ const OnboardButton = styled(Button)`
         margin-left: auto;
     }
 `
-const NavItem = styled.h3`
+const NavItem = styled.h3<Pick<Styles, 'active'>>`
     font-size: 15px;
-    color: ${props => props.theme.textPrimary};
+    color: ${props => props.active ? props.theme.textHighlight : props.theme.textPrimary};
     margin: 0px;
     margin-top: 25px;
     margin-right: 20px;
@@ -106,6 +107,7 @@ const Nav: React.FC<Props> = props => {
     const [dropdownOpen, setDropdownOpen] = React.useState(false);
     const [buttonText, setButtonText] = React.useState<string>('Connect');
     const [destination, setDestination] = React.useState<string>('/')
+    const [activePage, setActivePage] = React.useState('');
 
     const handleScroll = () => {
         const offset = window.scrollY;
@@ -126,15 +128,29 @@ const Nav: React.FC<Props> = props => {
     })
 
     React.useEffect(() => {
+        console.log(props.pageName)
         switch (props.pageName) {
             case 'Landing':
                 setButtonText('Launch App')
                 setDestination('/ido')
+                setActivePage('Landing')
+                break;
+            case 'Locker Landing':
+                setActivePage('Locker Landing')
                 break;
             case 'Construction':
                 setButtonText('Home');
                 setDestination('/')
                 break
+            case 'IDO':
+                setActivePage('IDO')
+                break;
+            case 'Staking':
+                setActivePage('Staking')
+                break;
+            case 'Meme Factory':
+                setActivePage('Meme Factory')
+                break;
             default:
                 setButtonText('Connect')
                 break;
@@ -145,9 +161,9 @@ const Nav: React.FC<Props> = props => {
     const handleSubmit = async () => {
         switch (buttonText) {
             case 'Connect':
-                
+
                 break;
-        
+
             default:
                 break;
         }
@@ -159,30 +175,30 @@ const Nav: React.FC<Props> = props => {
                 <Logo src={LogoImage} />
                 <LinksContainer>
                     <LinkTo to='/staking'>
-                        <NavItem>Staking</NavItem>
+                        <NavItem active={activePage === 'Staking'}>Staking</NavItem>
                     </LinkTo>
                     <LinkTo to='/ido'>
-                        <NavItem>IDO Launchpad</NavItem>
+                        <NavItem active={activePage === 'IDO'}>IDO Launchpad</NavItem>
                     </LinkTo>
                     <LinkTo to='/meme-factory'>
-                        <NavItem>Meme Factory</NavItem>
+                        <NavItem active={activePage === 'Meme Factory'}>Meme Factory</NavItem>
                     </LinkTo>
-                    <LinkTo to='/farm'>
-                        <NavItem>Farm</NavItem>
-                    </LinkTo>
+                    {/* <LinkTo to='/farm'>
+                        <NavItem active={activePage == 'Farm'}>Farm</NavItem>
+                    </LinkTo> */}
                     <LinkTo to='/dashboard'>
-                        <NavItem>Dashboard</NavItem>
+                        <NavItem active={activePage === 'Dashboard'}>Dashboard</NavItem>
                     </LinkTo>
                     <LinkTo to='/liquidity-lock'>
-                        <NavItem>Locker</NavItem>
+                        <NavItem active={activePage === 'Locker Landing'}>Locker</NavItem>
                     </LinkTo>
                 </LinksContainer>
-                <OnboardButton secondary width='120px' height='30px' text='Oboard Now' />
+                <OnboardButton secondary width='120px' height='30px' text='Onboard Now' />
                 {
-                    buttonText == 'Connect' ? <ActionButton primary width='120px' height='40px' text={buttonText} /> 
-                                            : <LinkTo to={destination}>
-                                                <ActionButton primary width='120px' height='40px' text={buttonText} />
-                                              </LinkTo>
+                    buttonText == 'Connect' ? <ActionButton primary width='120px' height='40px' text={buttonText} />
+                        : <LinkTo to={destination}>
+                            <ActionButton primary width='120px' height='40px' text={buttonText} />
+                        </LinkTo>
                 }
                 <NavMenuContainer open={dropdownOpen} onClick={() => setDropdownOpen(!dropdownOpen)}>
                     <NavMenuImage open={dropdownOpen} src={dropdownOpen ? Up : Down} />
