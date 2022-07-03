@@ -10,6 +10,8 @@
     "@3rdweb/react": "^1.9.3",
     "@types/styled-components": "^5.1.24",
     "@walletconnect/web3-provider": "^1.4.1",
+    "@material-ui/core": "^4.11.4",
+    "@material-ui/icons": "^4.11.2",
     "bignumber": "^1.1.0",
     "bignumber.js": "^9.0.1",
     "react": "^17.0.2",
