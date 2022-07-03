@@ -2,10 +2,12 @@ import styled from 'styled-components';
 import React from 'react';
 import Button from '../Components/Common/Button'
 import LogoImage from '../Images/Logo-Dark.png';
+import LogoTextImage from '../Images/logo-text.png';
 import Down from '../Images/arrow-down-alt.png';
 import Up from '../Images/arrow-down-highlight.png';
 import { Link } from 'react-router-dom';
 import NavDropdown from '../Components/NavDropdown';
+import { keyframes } from 'styled-components';
 
 interface Props {
     theme: string;
@@ -18,12 +20,24 @@ interface Styles {
     active?: boolean;
 }
 
+const ScrollText = keyframes`
+    from {
+        -moz-transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+    to {
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+    }
+`
+
 const NavContainer = styled.div<Pick<Styles, | 'scrolled'>>`
     max-height: 100px;
     min-width: 100%;
     background-color: #28282A;
     box-shadow: ${props => props.theme.boxShadow};
-    margin-bottom: 50px;
     z-index: 10000000000;
 
     ${({ scrolled }) => scrolled && `
@@ -33,19 +47,45 @@ const NavContainer = styled.div<Pick<Styles, | 'scrolled'>>`
     `}}
 `
 const InnerContainer = styled.div`
-    width: 90%;
+    width: 95%;
     display: flex;
     flex-direction: flex-start;
-    margin-left: 5%;
+    margin-left: 2.5%;
 
     @media screen and (max-width: 475px) {
     }
+`
+const DonationContainer = styled.div`
+    width: 100%;
+    background-color: ${props => props.theme.bodyBlue};
+    display: flex;
+    box-shadow: ${props => props.theme.boxShadow};
+    margin-bottom: 50px;
+    overflow: hidden;
+`
+const DonationText = styled.h3`
+    font-size: 20px;
+    width: 100%;
+    font-weight: lighter;
+    text-align: center;
+    margin: 5px;
+    -moz-animation: ${ScrollText} 10s linear infinite;
+    -webkit-animation: ${ScrollText} 10s linear infinite;
+    animation: ${ScrollText} 10s linear infinite;
 `
 
 const Logo = styled.img`
     margin-top: 10px;
     height: 50px;
     margin-bottom: 10px;
+`
+const LogoText = styled.img`
+    height: 30px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    @media screen and (max-width: 560px) {
+        display: none;
+    }
 `
 const ActionButton = styled(Button)`
     margin-left: 15px;
@@ -55,7 +95,7 @@ const ActionButton = styled(Button)`
 const OnboardButton = styled(Button)`
     margin-top: 20px;
     font-size: 12.5px;
-    @media screen and (max-width: 1065px) {
+    @media screen and (max-width: 1275px) {
         margin-left: auto;
     }
 `
@@ -78,7 +118,7 @@ const NavMenuContainer = styled.div<Pick<Styles, 'open'>>`
     max-width: 30px;
     margin-top: 20px;
     margin-left: 10px;
-    @media screen and (min-width: 1065px) {
+    @media screen and (min-width: 1275px) {
         display: none;
     }
 `
@@ -93,7 +133,7 @@ const LinksContainer = styled.div`
     display: flex;
     justify-content: space-around;
     margin-left: auto;
-    @media screen and (max-width: 1065px) {
+    @media screen and (max-width: 1275px) {
         display: none;
     }
 `
@@ -128,28 +168,36 @@ const Nav: React.FC<Props> = props => {
     })
 
     React.useEffect(() => {
-        console.log(props.pageName)
         switch (props.pageName) {
             case 'Landing':
                 setButtonText('Launch App')
                 setDestination('/ido')
                 setActivePage('Landing')
                 break;
-            case 'Locker Landing':
-                setActivePage('Locker Landing')
+            case 'ElevateLOCK':
+                setActivePage('ElevateLOCK')
                 break;
             case 'Construction':
                 setButtonText('Home');
                 setDestination('/')
                 break
-            case 'IDO':
-                setActivePage('IDO')
+            case 'ElevatePAD':
+                setActivePage('ElevatePAD')
                 break;
-            case 'Staking':
-                setActivePage('Staking')
+            case 'Dashboard':
+                setActivePage('Dashboard')
                 break;
-            case 'Meme Factory':
-                setActivePage('Meme Factory')
+            case 'ElevateMEME':
+                setActivePage('ElevateMEME')
+                break;
+            case 'About':
+                setActivePage('About')
+                break;
+            case 'Partners':
+                setActivePage('Partners')
+                break;
+            case 'NFT':
+                setActivePage('NFT')
                 break;
             default:
                 setButtonText('Connect')
@@ -170,42 +218,56 @@ const Nav: React.FC<Props> = props => {
     }
 
     return (
-        <NavContainer scrolled={scrolled}>
-            <InnerContainer>
-                <Logo src={LogoImage} />
-                <LinksContainer>
-                    <LinkTo to='/staking'>
-                        <NavItem active={activePage === 'Staking'}>Staking</NavItem>
+        <>
+            <NavContainer scrolled={scrolled}>
+                <InnerContainer>
+                    <LinkTo to='/'>
+                        <Logo src={LogoImage} />
+                        <LogoText src={LogoTextImage} />
                     </LinkTo>
-                    <LinkTo to='/ido'>
-                        <NavItem active={activePage === 'IDO'}>IDO Launchpad</NavItem>
-                    </LinkTo>
-                    <LinkTo to='/meme-factory'>
-                        <NavItem active={activePage === 'Meme Factory'}>Meme Factory</NavItem>
-                    </LinkTo>
-                    {/* <LinkTo to='/farm'>
-                        <NavItem active={activePage == 'Farm'}>Farm</NavItem>
-                    </LinkTo> */}
-                    <LinkTo to='/dashboard'>
-                        <NavItem active={activePage === 'Dashboard'}>Dashboard</NavItem>
-                    </LinkTo>
-                    <LinkTo to='/liquidity-lock'>
-                        <NavItem active={activePage === 'Locker Landing'}>Locker</NavItem>
-                    </LinkTo>
-                </LinksContainer>
-                <OnboardButton secondary width='120px' height='30px' text='Onboard Now' />
-                {
-                    buttonText == 'Connect' ? <ActionButton primary width='120px' height='40px' text={buttonText} />
-                        : <LinkTo to={destination}>
-                            <ActionButton primary width='120px' height='40px' text={buttonText} />
+                    <LinksContainer>
+                        <LinkTo to='/elevate-pad'>
+                            <NavItem active={activePage === 'ElevatePAD'}>ElevatePad</NavItem>
                         </LinkTo>
-                }
-                <NavMenuContainer open={dropdownOpen} onClick={() => setDropdownOpen(!dropdownOpen)}>
-                    <NavMenuImage open={dropdownOpen} src={dropdownOpen ? Up : Down} />
-                    <NavDropdown open={dropdownOpen} close={handleDropdown} theme={props.theme} />
-                </NavMenuContainer>
-            </InnerContainer>
-        </NavContainer>
+                        <LinkTo to='/elevate-meme'>
+                            <NavItem active={activePage === 'ElevateMEME'}>ElevateMEME</NavItem>
+                        </LinkTo>
+                        <LinkTo to='/elevate-dao'>
+                            <NavItem active={activePage == 'ElevateDAO'}>ElevateDAO</NavItem>
+                        </LinkTo>
+                        <LinkTo to='/dashboard'>
+                            <NavItem active={activePage === 'Dashboard'}>Dashboard</NavItem>
+                        </LinkTo>
+                        <LinkTo to='/elevate-lock'>
+                            <NavItem active={activePage === 'ElevateLOCK'}>Locker</NavItem>
+                        </LinkTo>
+                        <LinkTo to='/about'>
+                            <NavItem active={activePage === 'About'}>About</NavItem>
+                        </LinkTo>
+                        <LinkTo to='/partners'>
+                            <NavItem active={activePage === 'Partners'}>Partners</NavItem>
+                        </LinkTo>
+                        <LinkTo to='/nft'>
+                            <NavItem active={activePage === 'NFT'}>NFT's</NavItem>
+                        </LinkTo>
+                    </LinksContainer>
+                    <OnboardButton secondary width='120px' height='30px' text='Onboard Now' />
+                    {
+                        buttonText == 'Connect' ? <ActionButton primary width='120px' height='40px' text={buttonText} />
+                            : <LinkTo to={destination}>
+                                <ActionButton primary width='120px' height='40px' text={buttonText} />
+                            </LinkTo>
+                    }
+                    <NavMenuContainer open={dropdownOpen} onClick={() => setDropdownOpen(!dropdownOpen)}>
+                        <NavMenuImage open={dropdownOpen} src={dropdownOpen ? Up : Down} />
+                        <NavDropdown open={dropdownOpen} close={handleDropdown} theme={props.theme} />
+                    </NavMenuContainer>
+                </InnerContainer>
+            </NavContainer>
+            <DonationContainer>
+                <DonationText>We have donated $0 to our partner charities since our launch date!</DonationText>
+            </DonationContainer>
+        </>
     )
 }
 

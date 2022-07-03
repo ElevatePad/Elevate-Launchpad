@@ -34,12 +34,14 @@ function App() {
         <Router>
           <Routes>
             <Route path='/' element={<Landing theme={theme}/>}/>
-            <Route path='/ido' element={<Main theme={theme}/>}/>
-            <Route path='/staking' element={<UnderConstruction theme={theme}/>}/>
-            <Route path='/meme-factory' element={<UnderConstruction theme={theme}/>}/>
-            <Route path='/liquidity-lock' element={<LockerLanding theme={theme}/>}/>
-            <Route path='/farm' element={<UnderConstruction theme={theme}/>}/>
+            <Route path='/elevate-pad' element={<Main theme={theme}/>}/>
             <Route path='/dashboard' element={<UnderConstruction theme={theme}/>}/>
+            <Route path='/elevate-meme' element={<UnderConstruction theme={theme}/>}/>
+            <Route path='/elevate-dao' element={<UnderConstruction theme={theme}/>}/>
+            <Route path='/elevate-lock' element={<LockerLanding theme={theme}/>}/>
+            <Route path='/about' element={<UnderConstruction theme={theme}/>}/>
+            <Route path='/partners' element={<UnderConstruction theme={theme}/>}/>
+            <Route path='/nft' element={<UnderConstruction theme={theme}/>}/>
           </Routes>
         </Router>
       </ThemeProvider>

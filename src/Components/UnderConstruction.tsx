@@ -2,11 +2,10 @@
 
 import React from 'react'
 import styled from 'styled-components';
-import LogoDark from '../Images/Logo-Dark.png';
 import Button from '../Components/Common/Button';
 import Construction from '../Images/construction.png'
-import { Link } from 'react-router-dom';
 import Nav from './Nav';
+import Footer from './Footer';
 
 interface Props {
     theme: string;
@@ -81,18 +80,20 @@ const SubHeading = styled.h3`
     font-weight: bold;
     color: ${props => props.theme.textPrimary};
     margin-top: 25px;
+    margin-bottom: 100px;
 `
 
 const UnderConstruction: React.FC<Props> = props => {
 
     return (
         <Container>
-            <Nav pageName='' theme={props.theme}/>
+            <Nav pageName='' theme={props.theme} />
             <ImageContainer>
                 <Image src={Construction} />
             </ImageContainer>
-                <Heading>Under Construction</Heading>
-                <SubHeading>Check back at a later date, and keep in touch on our socials to find out more!</SubHeading>
+            <Heading>Under Construction</Heading>
+            <SubHeading>Check back at a later date, and keep in touch on our socials to find out more!</SubHeading>
+            <Footer theme={props.theme} />
         </Container>
     )
 }

@@ -5,6 +5,7 @@ import Button from '../Common/Button';
 import LaunchPadGraphic from '../../Images/LaunchPadGraphic.png';
 import { Link } from 'react-router-dom';
 import Nav from '../Nav';
+import Footer from '../Footer';
 
 interface Props {
     theme: string;
@@ -109,8 +110,8 @@ const Landing: React.FC<Props> = props => {
             <Nav pageName='Landing' theme={props.theme}/>
             <InnerContainer>
                 <InfoContainer>
-                    <InfoHeading>Elevate Incubator</InfoHeading>
-                    <InfoDescription>Create and find vetted projects that have undergone KYC checks and verification from the Elevate team. </InfoDescription>
+                    <InfoHeading>ElevatePAD</InfoHeading>
+                    <InfoDescription>ElevatePad will help develop projects with real world utility that are actively aligned with ESG (Environmental, Social, and Governance)  and DeFi principles.</InfoDescription>
                     <div style={{ 'minWidth': '100%' }}>
                         <Link to='/ido'>
                             <AppButton text='Launch App' primary height='40px' width='120px' />
@@ -121,6 +122,7 @@ const Landing: React.FC<Props> = props => {
                     <Graphic src={LaunchPadGraphic} />
                 </ImageContainer>
             </InnerContainer>
+            <Footer theme={props.theme}/>
         </Container>
     )
 }

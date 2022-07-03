@@ -1,9 +1,8 @@
 import React from 'react';
-import Interface from '../../metamask';
-import { useWeb3 } from '@3rdweb/hooks';
 import PresalePanel from '../PresalePanel';
 import * as Styled from '../Styles/MainStyles';
 import Nav from '../Nav';
+import Footer from '../Footer';
 
 interface Props {
   theme: string;
@@ -86,37 +85,15 @@ const MockData = [
 
 const Main: React.FC<Props> = props => {
 
-  const { address, connectWallet, provider } = useWeb3();
   const pendingPresales = MockData.filter(p => p.status == 'Pending');
   const votingPresales = MockData.filter(p => p.status == 'Voting');
   const openPresales = MockData.filter(p => p.status == 'Open');
   const completedPresales = MockData.filter(p => p.status == 'Completed');
 
 
-  React.useEffect(() => {
-    if (address == null) {
-      connectWallet('injected');
-      Interface.connectWallet(provider?.provider);
-    }
-  },
-    [])
-
-  React.useEffect(() => {
-    if (address != null) {
-    }
-  }, [address])
-
-  const manualConnect = () => {
-    if (address == null) {
-      connectWallet('injected');
-      Interface.connectWallet(provider?.provider);
-    }
-  }
-
-
   return (
     <Styled.Container theme={props.theme}>
-      <Nav theme={props.theme} />
+      <Nav pageName='ElevatePAD' theme={props.theme} />
       <Styled.Section>
         <Styled.SectionRow>
           <Styled.SectionHeading>Want to see your project here?</Styled.SectionHeading>
@@ -225,6 +202,7 @@ const Main: React.FC<Props> = props => {
           }
         </Styled.SectionRow>
       </Styled.Section>
+      <Footer theme={props.theme}/>
     </Styled.Container>
   )
 }

@@ -1,12 +1,11 @@
 import React from 'react'
-import styled from 'styled-components';
-import Button from '../Common/Button';
-import { Link } from 'react-router-dom';
 import * as Styled from '../Styles/LockerLandingStyles';
 import Nav from '../Nav'
 import LockAndKey from '../../Images/lockandkey.png';
 import SearchIcon from '../../Images/search-icon.png';
 import LockerPanelMin from '../LockerPanelMin';
+import Footer from '../Footer';
+
 interface Props {
     theme: string;
 }
@@ -15,7 +14,7 @@ const LockerLanding: React.FC<Props> = props => {
 
     return (
         <Styled.Container>
-            <Nav pageName='Locker Landing' theme={props.theme} />
+            <Nav pageName='ElevateLOCK' theme={props.theme} />
             <Styled.InnerContainer>
                 <Styled.ImageContainer>
                     <Styled.LockerImg src={LockAndKey} />
@@ -41,6 +40,7 @@ const LockerLanding: React.FC<Props> = props => {
                 </Styled.ActiveLockContainer>
                 <div style={{'minHeight' : '200px'}}/>
             </Styled.InnerContainer>
+            <Footer theme={props.theme}/>
         </Styled.Container>
     )
 }

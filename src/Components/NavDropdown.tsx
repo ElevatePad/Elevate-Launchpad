@@ -107,27 +107,33 @@ const NavDropdown: React.FC<Props> = props => {
             {
                 props.open ?
                     <Container open={props.open}>
-                        <LinkTo to='/staking'>
-                            <Item>Staking</Item>
+                        <LinkTo to='/elevate-pad'>
+                            <Item>ElevatePad</Item>
                         </LinkTo>
-                        <LinkTo to='/ido'>
-                            <Item>IDO Launchpad</Item>
+                        <LinkTo to='/elevate-meme'>
+                            <Item >ElevateMEME</Item>
                         </LinkTo>
-                        <LinkTo to='/meme-factory'>
-                            <Item>Meme Factory</Item>
-                        </LinkTo>
-                        <LinkTo to='/farm'>
-                            <Item>Farm</Item>
+                        <LinkTo to='/'>
+                            <Item >ElevateDAO</Item>
                         </LinkTo>
                         <LinkTo to='/dashboard'>
-                            <Item>Dashboard</Item>
+                            <Item >Dashboard</Item>
                         </LinkTo>
-                        <LinkTo to='/liquidity-lock'>
-                            <Item>Locker</Item>
+                        <LinkTo to='/elevate-lock'>
+                            <Item >Locker</Item>
+                        </LinkTo>
+                        <LinkTo to='/about'>
+                            <Item >About</Item>
+                        </LinkTo>
+                        <LinkTo to='/partners'>
+                            <Item >Partners</Item>
+                        </LinkTo>
+                        <LinkTo to='/nft'>
+                            <Item>NFT's</Item>
                         </LinkTo>
                     </Container>
                     :
-                    <Closed open={props.open}/>
+                    <Closed open={props.open} />
             }
         </>
     )
