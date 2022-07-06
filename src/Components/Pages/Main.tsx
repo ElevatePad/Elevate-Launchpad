@@ -11,7 +11,7 @@ interface Props {
 const MockData = [
   {
     cap: 1000,
-    swapRate: '1 ETH = 100 STG',
+    swapRate: '1 ETH = 100 ELEV',
     projectName: 'ELEV',
     startDate: 'TBA',
     status: 'Pending',
@@ -20,8 +20,8 @@ const MockData = [
   },
   {
     cap: 120,
-    swapRate: '1 ETH = 1202 STG ',
-    projectName: 'Stargate',
+    swapRate: '1 ETH = 1202 IMP ',
+    projectName: 'IMP',
     startDate: 'TBA',
     status: 'Voting',
     completedPercent: 0,
@@ -29,8 +29,8 @@ const MockData = [
   },
   {
     cap: 800,
-    swapRate: '1 ETH = 120000',
-    projectName: 'STEALLA',
+    swapRate: '1 ETH = 120000 PWR',
+    projectName: 'POWER',
     startDate: '10/5/22 7PM UTC',
     status: 'Pending',
     completedPercent: 0,
@@ -38,8 +38,8 @@ const MockData = [
   },
   {
     cap: 750,
-    swapRate: '1 ETH = 25',
-    projectName: 'OSMO',
+    swapRate: '1 ETH = 25 VOTE',
+    projectName: 'VOTE',
     startDate: '1/2/2022',
     status: 'Completed',
     completedPercent: 100,
@@ -47,8 +47,8 @@ const MockData = [
   },
   {
     cap: 2011,
-    swapRate: '1 ETH = 5000',
-    projectName: 'BAYC',
+    swapRate: '1 ETH = 5000 STAR',
+    projectName: 'STAR',
     startDate: '2/4/2022',
     status: 'Open',
     completedPercent: 80,
@@ -56,8 +56,8 @@ const MockData = [
   },
   {
     cap: 850,
-    swapRate: '1 ETH = 200',
-    projectName: 'OS',
+    swapRate: '1 ETH = 200 INT',
+    projectName: 'INT',
     startDate: '1/5/2022',
     status: 'Open',
     completedPercent: 20,
@@ -65,8 +65,8 @@ const MockData = [
   },
   {
     cap: 2011,
-    swapRate: '1 ETH = 5000',
-    projectName: 'BAYC',
+    swapRate: '1 ETH = 5000 PGM',
+    projectName: 'PROGRAM',
     startDate: '2/4/2022',
     status: 'Open',
     completedPercent: 80,
@@ -74,8 +74,8 @@ const MockData = [
   },
   {
     cap: 2011,
-    swapRate: '1 ETH = 5000',
-    projectName: 'BAYC',
+    swapRate: '1 ETH = 5000 NXT',
+    projectName: 'NEXT',
     startDate: '2/4/2022',
     status: 'Open',
     completedPercent: 80,

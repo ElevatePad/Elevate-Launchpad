@@ -26,11 +26,12 @@ const SectionHeading = styled.h3`
     margin: 0px;
     margin-top: 17.5px;
     margin-bottom: 10px;
-    margin-right: 25px;
 `
 const SocialContainer = styled.div`
     display: flex;
     margin-top: 5px;
+    width: 100%;
+    justify-content: center;
 `
 const SocialItem = styled.img`
     width: 25px;

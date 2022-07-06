@@ -263,10 +263,10 @@ const Nav: React.FC<Props> = props => {
                         <NavDropdown open={dropdownOpen} close={handleDropdown} theme={props.theme} />
                     </NavMenuContainer>
                 </InnerContainer>
-            </NavContainer>
             <DonationContainer>
-                <DonationText>We have donated $0 to our partner charities since our launch date!</DonationText>
+                <DonationText>Previously donated nearly 1 million dollars to Coral Restoration Foundation.</DonationText>
             </DonationContainer>
+            </NavContainer>
         </>
     )
 }
