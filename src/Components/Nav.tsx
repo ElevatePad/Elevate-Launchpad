@@ -140,6 +140,9 @@ const LinksContainer = styled.div`
 const LinkTo = styled(Link)`
     text-decoration: none;
 `
+const ExternalLink = styled.a`
+    text-decoration: none;
+`
 
 
 const Nav: React.FC<Props> = props => {
@@ -241,9 +244,9 @@ const Nav: React.FC<Props> = props => {
                         <LinkTo to='/elevate-lock'>
                             <NavItem active={activePage === 'ElevateLOCK'}>Locker</NavItem>
                         </LinkTo>
-                        <LinkTo to='/about'>
-                            <NavItem active={activePage === 'About'}>About</NavItem>
-                        </LinkTo>
+                        <ExternalLink href='https://elevatepad.gitbook.io/elevate-usdelev/' target='_blank'>
+                            <NavItem active={activePage === 'About'}>WhitePaper</NavItem>
+                        </ExternalLink>
                         <LinkTo to='/partners'>
                             <NavItem active={activePage === 'Partners'}>Partners</NavItem>
                         </LinkTo>

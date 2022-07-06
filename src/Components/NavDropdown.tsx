@@ -79,6 +79,11 @@ const LinkTo = styled(Link)`
     border-bottom: 1px solid ${props => props.theme.textHighlight};
     text-decoration: none;
 `
+const ExternalLink = styled.a`
+    width: 100%;
+    border-bottom: 1px solid ${props => props.theme.textHighlight};
+    text-decoration: none;
+`
 
 const Item = styled.h3`
     min-width: 100%;
@@ -122,9 +127,9 @@ const NavDropdown: React.FC<Props> = props => {
                         <LinkTo to='/elevate-lock'>
                             <Item >Locker</Item>
                         </LinkTo>
-                        <LinkTo to='/about'>
-                            <Item >About</Item>
-                        </LinkTo>
+                        <ExternalLink href='https://elevatepad.gitbook.io/elevate-usdelev/' target='_blank'>
+                            <Item >WhitePaper</Item>
+                        </ExternalLink>
                         <LinkTo to='/partners'>
                             <Item >Partners</Item>
                         </LinkTo>
