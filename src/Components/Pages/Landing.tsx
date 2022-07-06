@@ -113,7 +113,7 @@ const Landing: React.FC<Props> = props => {
                     <InfoHeading>ElevatePAD</InfoHeading>
                     <InfoDescription>ElevatePad will help develop projects with real world utility that are actively aligned with ESG (Environmental, Social, and Governance)  and DeFi principles.</InfoDescription>
                     <div style={{ 'minWidth': '100%' }}>
-                        <Link to='/ido'>
+                        <Link to='/elevate-pad'>
                             <AppButton text='Launch App' primary height='40px' width='120px' />
                         </Link>
                     </div>

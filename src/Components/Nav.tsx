@@ -171,7 +171,7 @@ const Nav: React.FC<Props> = props => {
         switch (props.pageName) {
             case 'Landing':
                 setButtonText('Launch App')
-                setDestination('/ido')
+                setDestination('/elevate-pad')
                 setActivePage('Landing')
                 break;
             case 'ElevateLOCK':
