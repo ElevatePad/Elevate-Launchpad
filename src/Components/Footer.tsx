@@ -38,18 +38,26 @@ const SocialItem = styled.img`
     margin: 10px;
 `
 
-const Footer:React.FC<Props> = props => {
+const Footer: React.FC<Props> = props => {
 
 
     return (
         <Container>
-                <SectionHeading>Connect with us on our socials!</SectionHeading>
-                <SocialContainer>
-                    <SocialItem src={TelegramImage}/>
+            <SectionHeading>Connect with us on our socials!</SectionHeading>
+            <SocialContainer>
+                <a href='https://t.me/elevatePADannounce' target='_blank'>
+                    <SocialItem src={TelegramImage} />
+                </a>
+                <a href='https://discord.com/invite/elevatepad' target='_blank'>
                     <SocialItem src={DiscordImage} />
+                </a>
+                <a href='https://medium.com/@elevatepad' target='_blank'>
                     <SocialItem src={MediumImage} />
+                </a>
+                <a href='https://twitter.com/ElevatePAD' target='_blank'>
                     <SocialItem src={TwitterImage} />
-                </SocialContainer>
+                </a>
+            </SocialContainer>
         </Container>
     )
 }
