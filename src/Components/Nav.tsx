@@ -57,7 +57,7 @@ const InnerContainer = styled.div`
 `
 const DonationContainer = styled.div`
     width: 100%;
-    background-color: ${props => props.theme.bodyBlue};
+    background-color: ${props => props.theme.textHighlight};
     display: flex;
     box-shadow: ${props => props.theme.boxShadow};
     margin-bottom: 50px;
@@ -66,12 +66,11 @@ const DonationContainer = styled.div`
 const DonationText = styled.h3`
     font-size: 20px;
     width: 100%;
-    font-weight: lighter;
     text-align: center;
     margin: 5px;
-    -moz-animation: ${ScrollText} 10s linear infinite;
-    -webkit-animation: ${ScrollText} 10s linear infinite;
-    animation: ${ScrollText} 10s linear infinite;
+    -moz-animation: ${ScrollText} 15s linear infinite;
+    -webkit-animation: ${ScrollText} 15s linear infinite;
+    animation: ${ScrollText} 15s linear infinite;
 `
 
 const Logo = styled.img`
@@ -230,7 +229,7 @@ const Nav: React.FC<Props> = props => {
                     </LinkTo>
                     <LinksContainer>
                         <LinkTo to='/elevate-pad'>
-                            <NavItem active={activePage === 'ElevatePAD'}>ElevatePad</NavItem>
+                            <NavItem active={activePage === 'ElevatePAD'}>ElevatePAD</NavItem>
                         </LinkTo>
                         <LinkTo to='/elevate-meme'>
                             <NavItem active={activePage === 'ElevateMEME'}>ElevateMEME</NavItem>
