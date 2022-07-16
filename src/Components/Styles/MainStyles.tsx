@@ -25,13 +25,13 @@ export const Container = styled.div<Pick<Props, 'theme'>>`
     content: ' ';
     box-sizing: border-box
     display: block;
-    position: absolute;
+    position: fixed;
     left: 0;
     z-index: -1;
     top: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.25;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.125;
     background-image: url(background-dark.png);
     background-position: center;
     background-size: cover;
@@ -78,4 +78,5 @@ export const SectionDescription = styled.p`
 `
 export const SignupButton = styled(Button)`
     margin-bottom: 50px;
+    color: ${props => props.theme.textAlt};
 `

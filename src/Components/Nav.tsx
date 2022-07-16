@@ -34,11 +34,13 @@ const ScrollText = keyframes`
 `
 
 const NavContainer = styled.div<Pick<Styles, | 'scrolled'>>`
-    max-height: 100px;
+    max-height: 105px;
     min-width: 100%;
-    background-color: #28282A;
+    background-color: ${props => props.theme.bodyLighter};
     box-shadow: ${props => props.theme.boxShadow};
+    -webkit-box-shadow: ${props => props.theme.boxShadow};
     z-index: 10000000000;
+    overflow: hidden;
 
     ${({ scrolled }) => scrolled && `
         position: fixed;
@@ -56,17 +58,17 @@ const InnerContainer = styled.div`
     }
 `
 const DonationContainer = styled.div`
-    width: 100%;
+    width: 200%;
     background-color: ${props => props.theme.textHighlight};
     display: flex;
-    box-shadow: ${props => props.theme.boxShadow};
     margin-bottom: 50px;
-    overflow: hidden;
+    z-index: -1000;
 `
 const DonationText = styled.h3`
     font-size: 20px;
-    width: 100%;
     text-align: center;
+    color: ${props => props.theme.button.textColor};
+    font-weight: lighter;
     margin: 5px;
     -moz-animation: ${ScrollText} 15s linear infinite;
     -webkit-animation: ${ScrollText} 15s linear infinite;
@@ -77,11 +79,18 @@ const Logo = styled.img`
     margin-top: 10px;
     height: 50px;
     margin-bottom: 10px;
+    display: none;
+
+    @media screen and (max-width: 560px) {
+        display: block;
+    }
 `
 const LogoText = styled.img`
-    height: 30px;
-    margin-bottom: 20px;
+    height: 40px;
+    margin-bottom: 15px;
+    margin-top: 15px;
     margin-left: 10px;
+
     @media screen and (max-width: 560px) {
         display: none;
     }
@@ -94,6 +103,8 @@ const ActionButton = styled(Button)`
 const OnboardButton = styled(Button)`
     margin-top: 20px;
     font-size: 12.5px;
+    color: ${props => props.theme.textAlt};
+
     @media screen and (max-width: 1275px) {
         margin-left: auto;
     }

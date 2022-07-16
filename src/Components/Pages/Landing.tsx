@@ -33,7 +33,7 @@ const Container = styled.div<Pick<Props, 'theme'>>`
     top: 0;
     width: 100%;
     height: 110%;
-    opacity: 0.4;
+    opacity: 0.125;
     background-image: url(background-dark.png);
     background-repeat: repeat;
     background-size: cover;
@@ -75,6 +75,7 @@ const InfoHeading = styled.h1`
     width: 100%;
     text-align: left;
     margin-top: -100px;
+    color: ${props => props.theme.textMain}
 `
 const InfoDescription = styled.p`
     width: 80%;

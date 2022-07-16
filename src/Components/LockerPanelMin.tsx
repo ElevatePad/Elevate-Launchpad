@@ -106,12 +106,12 @@ export const LockerPanelMin: React.FC<Props> = props => {
         {
             name: 'Locked',
             value: props.lockPercent,
-            fill: '#05d19c'
+            fill: '#2c2d75'
         },
         {
             name: 'Unlocked',
             value: 100 - props.lockPercent,
-            fill: '#CAD9E3'
+            fill: '#666666'
         }
     ]
     return (

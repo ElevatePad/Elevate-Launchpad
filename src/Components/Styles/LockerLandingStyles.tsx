@@ -27,7 +27,7 @@ export const Container = styled.div<Pick<Props, 'theme'>>`
     top: 0;
     width: 100%;
     height: 110%;
-    opacity: 0.4;
+    opacity: 0.125;
     background-image: url(background-dark.png);
     background-repeat: repeat;
     background-size: cover;
@@ -47,6 +47,7 @@ export const ImageContainer = styled.div`
     justify-content: center;
     max-height: 300px;
     width: 100%;
+    margin-top: 25px;
 `
 export const LockerImg = styled.img`
     max-width: 300px;

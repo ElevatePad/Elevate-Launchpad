@@ -32,7 +32,7 @@ const Container = styled.div<Pick<Props, 'theme'>>`
     top: 0;
     width: 100%;
     height: 110%;
-    opacity: 0.4;
+    opacity: 0.125;
     background-image: url(background-dark.png);
     background-repeat: repeat;
     background-size: cover;

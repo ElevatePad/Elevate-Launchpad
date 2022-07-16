@@ -25,8 +25,8 @@ const ButtonObj = styled.button<Pick<Props, 'height' | 'width' | 'primary' | 'se
     cursor:'pointer';
 
     &:hover {
-        -webkit-box-shadow: inset 0px 0px 25px 5px rgba(0,0,0,0.25);
-        box-shadow: inset 0px 0px 25px 5px rgba(0,0,0,0.25); 
+        -webkit-box-shadow:  0px 0px 25px 7.5px rgba(0,0,0,0.2);
+        box-shadow:  0px 0px 25px 7.5px rgba(0,0,0,0.2); 
     }
 
     ${({ primary, theme, disabled }) => primary && `

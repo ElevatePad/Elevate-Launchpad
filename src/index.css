@@ -11,8 +11,52 @@ code {
 }
 
 @font-face {
-  font-family: 'Audiowide-Regular.ttf';
-  src: local('Audiowide-Regular'), url(./Fonts/Audiowide-Regular.ttf) format('truetype');
+  font-family: 'AkzidenzGrotesk';
+  src: local('AkzidenzGrotesk-BoldExtended'), url(./Fonts/AkzidenzGrotesk-BoldExtended.otf) format('opentype');
+  font-weight: bold;
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+@font-face {
+  font-family: 'AkzidenzGrotesk';
+  src: local('AkzidenzGrotesk-BoldExtendedItalic'), url(./Fonts/AkzidenzGrotesk-BoldExtendedItalic.otf) format('opentype');
+  font-weight: bold;
+  font-style: italic;
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+@font-face {
+  font-family: 'AkzidenzGrotesk';
+  src: local('AkzidenzGrotesk-Extended'), url(./Fonts/AkzidenzGrotesk-Extended.otf) format('opentype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+@font-face {
+  font-family: 'AkzidenzGrotesk';
+  src: local('AkzidenzGrotesk-ExtendedItalic'), url(./Fonts/AkzidenzGrotesk-ExtendedItalic.otf) format('opentype');
+  font-style: italic;
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+@font-face {
+  font-family: 'AkzidenzGrotesk';
+  src: local('AkzidenzGrotesk-LightExtended'), url(./Fonts/AkzidenzGrotesk-LightExtended.otf) format('opentype');
+  font-weight: lighter;
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+@font-face {
+  font-family: 'AkzidenzGrotesk';
+  src: local('AkzidenzGrotesk-LightExtendedItalic'), url(./Fonts/AkzidenzGrotesk-LightExtendedItalic.otf) format('opentype');
+  font-weight: lighter;
+  font-style: italic;
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+@font-face {
+  font-family: 'AkzidenzGrotesk';
+  src: local('AkzidenzGrotesk-MediumExtended'), url(./Fonts/AkzidenzGrotesk-MediumExtended.otf) format('opentype');
+  font-weight: 500;
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
 }

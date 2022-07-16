@@ -1,10 +1,10 @@
 export const defaultTheme = { 
-    body: '#27282A',
-    bodyLighter: '#45464A',
+    body: '#FFFFFF',
+    bodyLighter: '#F5F5F5',
     bodyBlue: 'rgba(1, 157, 226, 0.8)',
-    textPrimary: '#EBFFFA',
-    textAlt: '#CAD9E3',
-    textHighlight: '#05d19c',
+    textPrimary: '#3D3D3D',
+    textAlt: '#666666',
+    textHighlight: '#2c2d75',
     borderRounding: '7.5px',
     priceBackground: '#464C5D',
     boxShadow: '0px 0px 15px 10px rgba(0,0,0,0.2)',
@@ -15,8 +15,8 @@ export const defaultTheme = {
         transparentBG: 'transparent',
         borderRounding: '15px',
         textColor: 'white',
-        boxShadow: '0px 0px 15px 10px rgba(0,0,0,0.15)',
-        borderHighlight: '#05d19c'
+        boxShadow: '0px 0px 25px 7.5px rgba(0,0,0,0.15)',
+        borderHighlight: '#2c2d75'
     }
 }
 

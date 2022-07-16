@@ -13,9 +13,14 @@ const Container = styled.div`
     display: flex; 
     flex-wrap: wrap;
     min-width: 100%;
-    background-color: #28282A;
+    background-color: ${props => props.theme.bodyLighter};
     box-shadow: ${props => props.theme.boxShadow};
     justify-content: center;
+    margin-top: 50px;
+    @media screen and (max-width: 500px) {
+        width: 100%;
+        margin-top: 0px;
+    }
 `
 
 const SectionHeading = styled.h3`
@@ -30,8 +35,10 @@ const SectionHeading = styled.h3`
 const SocialContainer = styled.div`
     display: flex;
     margin-top: 5px;
-    width: 100%;
     justify-content: center;
+    @media screen and (max-width: 500px) {
+        width: 100%;
+    }
 `
 const SocialItem = styled.img`
     width: 25px;

@@ -226,7 +226,7 @@ export const DepositAmountInputContainer = Styled.div<Pick<Styles, 'active'>>`
     max-height: 40px;
     height: 35px;
     display: flex;
-    background-color: ${props => props.theme.textAlt};
+    background-color: ${props => props.theme.bodyLighter};
     border-radius: ${props => props.theme.borderRounding};
     margin-top: 10px;
     margin-bottom: 20px;
@@ -238,7 +238,7 @@ export const DepositAmountInput = Styled.input`
     border: hidden;
     outline: none;
     max-width: 69%;
-    color: ${props => props.theme.body};
+    color: ${props => props.theme.textAlt};
     font-size: 17.5px;
     height: 17.5px;
     margin-top: 9px;
@@ -253,7 +253,7 @@ export const DespositAmountInputLabel = Styled.h3`
     margin-top: 7.5px;
     margin-right: 5px;
     font-weight: bold;
-    color: ${props => props.theme.body};
+    color: ${props => props.theme.textMain};
 `
 export const DepositButton = Styled(Button)`
     margin-top: 12.5px;
