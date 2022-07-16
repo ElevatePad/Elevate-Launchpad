@@ -50,7 +50,7 @@ const CloseAnimation = styled.div`
 
 const Container = styled(OpenAnimation) <Pick<Props, 'open'>>`
     position: relative;
-    z-index: 100;
+    z-index: 100000000000000;
     min-width: 200px;
     min-height: 200px;
     max-height: 500px;

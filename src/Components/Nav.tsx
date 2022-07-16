@@ -40,7 +40,6 @@ const NavContainer = styled.div<Pick<Styles, | 'scrolled'>>`
     box-shadow: ${props => props.theme.boxShadow};
     -webkit-box-shadow: ${props => props.theme.boxShadow};
     z-index: 10000000000;
-    overflow: hidden;
 
     ${({ scrolled }) => scrolled && `
         position: fixed;
@@ -58,11 +57,10 @@ const InnerContainer = styled.div`
     }
 `
 const DonationContainer = styled.div`
-    width: 200%;
+    width: 100%;
     background-color: ${props => props.theme.textHighlight};
     display: flex;
     margin-bottom: 50px;
-    z-index: -1000;
 `
 const DonationText = styled.h3`
     font-size: 20px;
