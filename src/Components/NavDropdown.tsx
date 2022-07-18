@@ -113,7 +113,7 @@ const NavDropdown: React.FC<Props> = props => {
                 props.open ?
                     <Container open={props.open}>
                         <LinkTo to='/elevate-pad'>
-                            <Item>ElevatePad</Item>
+                            <Item>ElevatePAD</Item>
                         </LinkTo>
                         <LinkTo to='/elevate-meme'>
                             <Item >ElevateMEME</Item>
@@ -128,7 +128,7 @@ const NavDropdown: React.FC<Props> = props => {
                             <Item >Locker</Item>
                         </LinkTo>
                         <ExternalLink href='https://elevatepad.gitbook.io/elevate-usdelev/' target='_blank'>
-                            <Item >WhitePaper</Item>
+                            <Item >Whitepaper</Item>
                         </ExternalLink>
                         <LinkTo to='/partners'>
                             <Item >Partners</Item>

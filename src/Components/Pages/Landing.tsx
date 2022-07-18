@@ -112,7 +112,7 @@ const Landing: React.FC<Props> = props => {
             <InnerContainer>
                 <InfoContainer>
                     <InfoHeading>ElevatePAD</InfoHeading>
-                    <InfoDescription>ElevatePad will help develop projects with real world utility that are actively aligned with ESG (Environmental, Social, and Governance)  and DeFi principles.</InfoDescription>
+                    <InfoDescription>Imagine projects that have a positive impact on humanity — where your average person can understand their value. Elevate will work with teams that share this vision of a world where Web 3.0 can positively transform the future.</InfoDescription>
                     <div style={{ 'minWidth': '100%' }}>
                         <Link to='/elevate-pad'>
                             <AppButton text='Launch App' primary height='40px' width='120px' />

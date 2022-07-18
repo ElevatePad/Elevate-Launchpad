@@ -57,10 +57,11 @@ const InnerContainer = styled.div`
     }
 `
 const DonationContainer = styled.div`
-    width: 100%;
+    max-width: 100%;
     background-color: ${props => props.theme.textHighlight};
     display: flex;
     margin-bottom: 50px;
+    overflow-x: hidden;
 `
 const DonationText = styled.h3`
     font-size: 20px;
