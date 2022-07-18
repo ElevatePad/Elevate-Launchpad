@@ -4,7 +4,7 @@ export const defaultTheme = {
     bodyBlue: 'rgba(1, 157, 226, 0.8)',
     textPrimary: '#3D3D3D',
     textAlt: '#666666',
-    textHighlight: '#2c2d75',
+    textHighlight: '#3c3cc3',
     borderRounding: '7.5px',
     priceBackground: '#464C5D',
     boxShadow: '0px 0px 15px 10px rgba(0,0,0,0.2)',
@@ -16,7 +16,7 @@ export const defaultTheme = {
         borderRounding: '15px',
         textColor: 'white',
         boxShadow: '0px 0px 25px 7.5px rgba(0,0,0,0.15)',
-        borderHighlight: '#2c2d75'
+        borderHighlight: '#3c3cc3'
     }
 }
 
