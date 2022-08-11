@@ -17,7 +17,7 @@ const Container = styled.div<Pick<Props, 'theme'>>`
     overflow: hidden;
     flex-wrap: wrap;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 95vh;
     background-color: ${props => props.theme.body};
     z-index: 1;
     opacity: 100;
@@ -86,15 +86,17 @@ const SubHeading = styled.h3`
 const UnderConstruction: React.FC<Props> = props => {
 
     return (
-        <Container>
-            <Nav pageName='' theme={props.theme} />
-            <ImageContainer>
-                <Image src={Construction} />
-            </ImageContainer>
-            <Heading>Under Construction</Heading>
-            <SubHeading>Check back at a later date, and keep in touch on our socials to find out more!</SubHeading>
+        <>
+            <Container>
+                <Nav pageName='' theme={props.theme} />
+                <ImageContainer>
+                    <Image src={Construction} />
+                </ImageContainer>
+                <Heading>Under Construction</Heading>
+                <SubHeading>Check back at a later date, and keep in touch on our socials to find out more!</SubHeading>
+            </Container>
             <Footer theme={props.theme} />
-        </Container>
+        </>
     )
 }
 

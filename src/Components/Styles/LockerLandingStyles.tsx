@@ -17,6 +17,7 @@ export const Container = styled.div<Pick<Props, 'theme'>>`
     z-index: 1;
     opacity: 100;
     position: relative;
+    margin-top: 105px;
 
     &:before {
     content: ' ';

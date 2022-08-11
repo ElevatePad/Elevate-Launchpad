@@ -16,10 +16,8 @@ const Container = styled.div`
     background-color: ${props => props.theme.bodyLighter};
     box-shadow: ${props => props.theme.boxShadow};
     justify-content: center;
-    margin-top: 50px;
     @media screen and (max-width: 500px) {
         width: 100%;
-        margin-top: 0px;
     }
 `
 

@@ -20,6 +20,7 @@ export const Container = styled.div<Pick<Props, 'theme'>>`
   height: 100%;
   background-attachment: fixed;
   position: relative;
+  margin-top: 105px;
 
   &:after {
     content: ' ';

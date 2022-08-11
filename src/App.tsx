@@ -13,6 +13,7 @@ import Landing from './Components/Pages/Landing';
 import React from 'react';
 import UnderConstruction from './Components/UnderConstruction';
 import LockerLanding from './Components/Pages/LockerLanding';
+import Dashboard from './Components/Pages/Dashboard';
 
 interface Props {
   theme: string;
@@ -35,7 +36,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Landing theme={theme}/>}/>
             <Route path='/elevate-pad' element={<Main theme={theme}/>}/>
-            <Route path='/dashboard' element={<UnderConstruction theme={theme}/>}/>
+            <Route path='/dashboard' element={<Dashboard theme={theme}/>}/>
             <Route path='/elevate-meme' element={<UnderConstruction theme={theme}/>}/>
             <Route path='/elevate-dao' element={<UnderConstruction theme={theme}/>}/>
             <Route path='/elevate-lock' element={<LockerLanding theme={theme}/>}/>

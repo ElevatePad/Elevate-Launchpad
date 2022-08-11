@@ -98,6 +98,9 @@ const ActionButton = styled(Button)`
     margin-left: 15px;
     margin-top: 15px;
     font-size: 15px;
+    @media screen and (max-width: 400px) {
+        margin-left: auto;
+    }
 `
 const OnboardButton = styled(Button)`
     margin-top: 20px;
@@ -107,6 +110,10 @@ const OnboardButton = styled(Button)`
     @media screen and (max-width: 1275px) {
         margin-left: auto;
     }
+
+    @media screen and (max-width: 400px) {
+        display: none;
+    }   
 `
 const NavItem = styled.h3<Pick<Styles, 'active'>>`
     font-size: 15px;
@@ -155,7 +162,7 @@ const ExternalLink = styled.a`
 
 
 const Nav: React.FC<Props> = props => {
-    const [scrolled, setScrolled] = React.useState(false);
+    const [scrolled, setScrolled] = React.useState(true);
     const [dropdownOpen, setDropdownOpen] = React.useState(false);
     const [buttonText, setButtonText] = React.useState<string>('Connect');
     const [destination, setDestination] = React.useState<string>('/')
@@ -163,11 +170,11 @@ const Nav: React.FC<Props> = props => {
 
     const handleScroll = () => {
         const offset = window.scrollY;
-        if (offset > 175) {
-            setScrolled(true);
+        if (offset > 205) {
+            //setScrolled(true);
         }
         else {
-            setScrolled(false);
+            //setScrolled(false);
         }
     }
 
