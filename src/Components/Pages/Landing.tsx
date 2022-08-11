@@ -13,7 +13,7 @@ interface Props {
 
 const Container = styled.div<Pick<Props, 'theme'>>`
     min-width: 100vw;
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     overflow: hidden;
     flex-wrap: wrap;
@@ -100,30 +100,32 @@ const Graphic = styled.img`
 const Landing: React.FC<Props> = props => {
 
     return (
-        <Container>
-            {/* <LandingNav>
+        <>
+            <Container>
+                {/* <LandingNav>
                 <Logo src={LogoDark} />
                 <Link style={{ 'marginLeft': 'auto' }} to='/app'>
                     <AppButton primary text='Launch App' height='40px' width='120px' />
                 </Link>
             </LandingNav> */}
-            <Nav pageName='Landing' theme={props.theme}/>
-            <InnerContainer>
-                <InfoContainer>
-                    <InfoHeading>ElevatePAD</InfoHeading>
-                    <InfoDescription>Imagine projects that have a positive impact on humanity — where your average person can understand their value. Elevate will work with teams that share this vision of a world where Web 3.0 can positively transform the future.</InfoDescription>
-                    <div style={{ 'minWidth': '100%' }}>
-                        <Link to='/elevate-pad'>
-                            <AppButton text='Launch App' primary height='40px' width='120px' />
-                        </Link>
-                    </div>
-                </InfoContainer>
-                <ImageContainer>
-                    <Graphic src={LaunchPadGraphic} />
-                </ImageContainer>
-            </InnerContainer>
-            <Footer theme={props.theme}/>
-        </Container>
+                <Nav pageName='Landing' theme={props.theme} />
+                <InnerContainer>
+                    <InfoContainer>
+                        <InfoHeading>ElevatePAD</InfoHeading>
+                        <InfoDescription>Imagine projects that have a positive impact on humanity — where your average person can understand their value. Elevate will work with teams that share this vision of a world where Web 3.0 can positively transform the future.</InfoDescription>
+                        <div style={{ 'minWidth': '100%' }}>
+                            <Link to='/elevate-pad'>
+                                <AppButton text='Launch App' primary height='40px' width='120px' />
+                            </Link>
+                        </div>
+                    </InfoContainer>
+                    <ImageContainer>
+                        <Graphic src={LaunchPadGraphic} />
+                    </ImageContainer>
+                </InnerContainer>
+            </Container>
+            <Footer theme={props.theme} />
+        </>
     )
 }
 
