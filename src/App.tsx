@@ -14,6 +14,7 @@ import React from 'react';
 import UnderConstruction from './Components/UnderConstruction';
 import LockerLanding from './Components/Pages/LockerLanding';
 import Dashboard from './Components/Pages/Dashboard';
+import Partners from './Components/Pages/Partners';
 
 interface Props {
   theme: string;
@@ -41,7 +42,7 @@ function App() {
             <Route path='/elevate-dao' element={<UnderConstruction theme={theme}/>}/>
             <Route path='/elevate-lock' element={<LockerLanding theme={theme}/>}/>
             <Route path='/about' element={<UnderConstruction theme={theme}/>}/>
-            <Route path='/partners' element={<UnderConstruction theme={theme}/>}/>
+            <Route path='/partners' element={<Partners theme={theme}/>}/>
             <Route path='/nft' element={<UnderConstruction theme={theme}/>}/>
           </Routes>
         </Router>
