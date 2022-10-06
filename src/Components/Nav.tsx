@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React from 'react';
+import React, { useEffect } from 'react';
 import Button from '../Components/Common/Button'
 import LogoImage from '../Images/Logo-Dark.png';
 import LogoTextImage from '../Images/logo-text.png';
@@ -8,6 +8,8 @@ import Up from '../Images/arrow-down-highlight.png';
 import { Link } from 'react-router-dom';
 import NavDropdown from '../Components/NavDropdown';
 import { keyframes } from 'styled-components';
+import { useWeb3 } from '@3rdweb/hooks';
+import Interface from '../metamask';
 
 interface Props {
     theme: string;
@@ -168,6 +170,28 @@ const Nav: React.FC<Props> = props => {
     const [destination, setDestination] = React.useState<string>('/')
     const [activePage, setActivePage] = React.useState('');
 
+    const { address, connectWallet, provider } = useWeb3();
+
+    useEffect(() => {
+        if (address == null) {
+            connectWallet('injected');
+            Interface.connectWallet(provider?.provider);
+        }
+    }, [])
+
+    useEffect(() => {
+        if (address != null) {
+            Interface.connectWallet(provider?.provider);
+        }
+    }, [address])
+
+    const manualConnect = () => {
+        if (address == null) {
+            connectWallet('injected');
+            Interface.connectWallet(provider?.provider);
+        }
+    }
+
     const handleScroll = () => {
         const offset = window.scrollY;
         if (offset > 205) {
@@ -267,12 +291,12 @@ const Nav: React.FC<Props> = props => {
                             <NavItem active={activePage === 'Partners'}>Partners</NavItem>
                         </LinkTo>
                         <LinkTo to='/nft'>
-                            <NavItem active={activePage === 'NFT'}>NFT's</NavItem>
+                            <NavItem active={activePage === 'NFTs'}>NFT's</NavItem>
                         </LinkTo>
                     </LinksContainer>
                     <OnboardButton secondary width='120px' height='30px' text='Onboard Now' />
                     {
-                        buttonText == 'Connect' ? <ActionButton primary width='120px' height='40px' text={buttonText} />
+                        buttonText == 'Connect' ? <ActionButton onClick={() => manualConnect()} primary width='120px' height='40px' text={address ? address.substring(0, 7) : 'Connect'} />
                             : <LinkTo to={destination}>
                                 <ActionButton primary width='120px' height='40px' text={buttonText} />
                             </LinkTo>
@@ -282,9 +306,9 @@ const Nav: React.FC<Props> = props => {
                         <NavDropdown open={dropdownOpen} close={handleDropdown} theme={props.theme} />
                     </NavMenuContainer>
                 </InnerContainer>
-            <DonationContainer>
-                <DonationText>Previously donated nearly 1 million dollars to Coral Restoration Foundation.</DonationText>
-            </DonationContainer>
+                <DonationContainer>
+                    <DonationText>Previously donated nearly 1 million dollars to Coral Restoration Foundation.</DonationText>
+                </DonationContainer>
             </NavContainer>
         </>
     )

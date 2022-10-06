@@ -15,6 +15,7 @@ import UnderConstruction from './Components/UnderConstruction';
 import LockerLanding from './Components/Pages/LockerLanding';
 import Dashboard from './Components/Pages/Dashboard';
 import Partners from './Components/Pages/Partners';
+import NFTs from './Components/Pages/NFTs';
 
 interface Props {
   theme: string;
@@ -43,7 +44,7 @@ function App() {
             <Route path='/elevate-lock' element={<LockerLanding theme={theme}/>}/>
             <Route path='/about' element={<UnderConstruction theme={theme}/>}/>
             <Route path='/partners' element={<Partners theme={theme}/>}/>
-            <Route path='/nft' element={<UnderConstruction theme={theme}/>}/>
+            <Route path='/nft' element={<NFTs theme={theme}/>}/>
           </Routes>
         </Router>
       </ThemeProvider>

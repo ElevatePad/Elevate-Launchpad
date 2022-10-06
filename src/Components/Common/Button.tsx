@@ -10,6 +10,7 @@ interface Props {
     primary?: boolean;
     secondary?: boolean;
     onClick?: React.MouseEventHandler<HTMLButtonElement>;
+    disabled?: boolean;
 }
 
 const ButtonObj = styled.button<Pick<Props, 'height' | 'width' | 'primary' | 'secondary' >>`
@@ -17,7 +18,7 @@ const ButtonObj = styled.button<Pick<Props, 'height' | 'width' | 'primary' | 'se
     height: ${props => props.height ? props.height : '100%'};
     border: 0px;
     border-radius: ${props => props.theme.button.borderRounding};
-    color: ${props => props.theme.button.textColor};
+    color: white;
     font-family: 'Audiowide-Regular', sans-serif;
     font-weight: bold;
     -webkit-box-shadow: ${props => props.theme.button.boxShadow};
@@ -34,6 +35,7 @@ const ButtonObj = styled.button<Pick<Props, 'height' | 'width' | 'primary' | 'se
 `}
 
     ${({ secondary, theme,  }) => secondary && `
+    color: ${props => props.theme.textHightlight} !important;
     background: transparent;
     border: 1px solid ${theme.button.borderHighlight}
 `}
