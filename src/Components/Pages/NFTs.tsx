@@ -56,14 +56,13 @@ const Title = styled.h3`
         margin-top: 200px;
     }
 `
-const SubHeading = styled.h3`
+const SubHeading = styled.p`
     width: 90%;
-    text-align: center;
+    text-align: left;
     margin: 0px;
-    margin-left: 5%;
     font-size: 25px;
     font-weight: bold;
-    color: ${props => props.theme.textPrimary};
+    color:#666666;
     margin-top: 25px;
     margin-bottom: 25px;
 
@@ -185,7 +184,7 @@ const NFTs: FC<Props> = props => {
         <Container>
             <Nav pageName='NFT' theme={props.theme} />
             <Title>Elevate OG Access Pass</Title>
-            <SubHeading>ElevateNFTs will bring NFT innovations through various partners who believe ESG impact on blockchain has hardly begun. Stay tuned for more details and in the meantime join our discord and learn how you too can become an Elevate OG and what perks you will unlock.</SubHeading>
+            <SubHeading>ElevateNFTs will bring NFT innovations through diverse partnerships, all linked in the belief that ESG Impact on blockchain has only just begun. Stay tuned for more details. In the meantime, join our Discord community to learn how your actions can earn you an Elevate OG NFT and unlock a multitude of perks!</SubHeading>
             <VideoContainer>
                 <Video playsInline autoPlay muted loop>
                     <source src='1.mp4' />

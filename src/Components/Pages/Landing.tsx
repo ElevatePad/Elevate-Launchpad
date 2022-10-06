@@ -74,7 +74,7 @@ const InfoHeading = styled.h1`
     font-size: 50px;
     width: 100%;
     text-align: left;
-    color: ${props => props.theme.textMain}
+    color: ${props => props.theme.textHighlight};
 `
 const InfoDescription = styled.p`
     width: 80%;

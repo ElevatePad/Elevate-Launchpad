@@ -82,7 +82,7 @@ const SubHeading = styled.h3`
     margin-left: 5%;
     font-size: 25px;
     font-weight: bold;
-    color: ${props => props.theme.textPrimary};
+    color: ${props => props.theme.textAlt};
     margin-top: 25px;
     margin-bottom: 25px;
 `

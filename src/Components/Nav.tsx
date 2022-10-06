@@ -291,7 +291,7 @@ const Nav: React.FC<Props> = props => {
                             <NavItem active={activePage === 'Partners'}>Partners</NavItem>
                         </LinkTo>
                         <LinkTo to='/nft'>
-                            <NavItem active={activePage === 'NFTs'}>NFT's</NavItem>
+                            <NavItem active={activePage === 'NFTs'}>NFTs</NavItem>
                         </LinkTo>
                     </LinksContainer>
                     <OnboardButton secondary width='120px' height='30px' text='Onboard Now' />

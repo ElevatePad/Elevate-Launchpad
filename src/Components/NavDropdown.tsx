@@ -134,7 +134,7 @@ const NavDropdown: React.FC<Props> = props => {
                             <Item >Partners</Item>
                         </LinkTo>
                         <LinkTo to='/nft'>
-                            <Item>NFT's</Item>
+                            <Item>NFTs</Item>
                         </LinkTo>
                     </Container>
                     :
