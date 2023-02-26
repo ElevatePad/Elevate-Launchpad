@@ -1,132 +1,78 @@
-import React from 'react'
-import styled from 'styled-components';
-import LogoDark from '../Images/Logo-Dark.png';
-import Button from '../Common/Button';
-import LaunchPadGraphic from '../../Images/LaunchPadGraphic.png';
-import { Link } from 'react-router-dom';
-import Nav from '../Nav';
-import Footer from '../Footer';
+import React from "react";
+import styled from "styled-components";
+import LogoDark from "../Images/Logo-Dark.png";
+import Button from "../Common/Button";
+import LaunchPadGraphic from "../../Images/LaunchPadGraphic.png";
+import { Link } from "react-router-dom";
+import Nav from "../Nav";
+import Footer from "../Footer";
 
 interface Props {
-    theme: string;
+  theme: string;
 }
 
-const Container = styled.div<Pick<Props, 'theme'>>`
-    min-width: 100vw;
-    min-height: 90vh;
-    display: flex;
-    overflow: hidden;
-    flex-wrap: wrap;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: ${props => props.theme.body};
-    z-index: 1;
-    opacity: 100;
-    position: relative;
+const Container = styled.div<Pick<Props, "theme">>`
+  min-width: 100vw;
+  min-height: 90vh;
+  display: flex;
+  overflow: hidden;
+  flex-wrap: wrap;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  opacity: 100;
+  position: relative;
+  background: #6f2dc3;
+  background: -webkit-radial-gradient(center, #6f2dc3, #57118b);
+  background: -moz-radial-gradient(center, #6f2dc3, #57118b);
+  background: radial-gradient(ellipse at center, #6f2dc3, #57118b);
 
   &:before {
-    content: ' ';
+    content: " ";
     display: block;
     position: absolute;
     left: 0;
     z-index: -1;
     top: 0;
     width: 100%;
-    height: 110%;
-    opacity: 0.125;
+    height: 100%;
+    opacity: 0.3;
     background-image: url(background-dark.png);
-    background-repeat: repeat;
     background-size: cover;
     background-position: center;
   }
-`
-const LandingNav = styled.div`
-    max-height: 100px;
-    max-width: 90%;
-    margin-left: 5%;
-    display: flex;
-    flex-direction: flex-start;
-`
-const Logo = styled.img`
-    margin-top: 15px;
-    height: 50px;
-`
-const AppButton = styled(Button)`
-    margin-left: auto;
-    margin-top: 20px;
-    font-size: 15px;
-`
-const InnerContainer = styled.div`
-    min-height: 80vh;
-    min-width: 90%;
-    margin-left: 5%;
-    display: flex;
-`
-const InfoContainer = styled.div`
-    min-height: 100%;
-    max-width: 50%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    flex-wrap: wrap;
-`
-const InfoHeading = styled.h1`
-    font-size: 50px;
-    width: 100%;
-    text-align: left;
-    color: ${props => props.theme.textHighlight};
-`
-const InfoDescription = styled.p`
-    width: 80%;
-    text-align: left;
-    font-size: 20px;
-    color: ${props => props.theme.textAlt};
-    margin: 0px;
-    margin-top: -10px;
-    font-weight: bold;
-`
-const ImageContainer = styled.div`
-    min-height: 100%;
-    max-width: 50%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-`
-const Graphic = styled.img`
-    width: 90%;
-    margin-left: -10%;
-`
 
-const Landing: React.FC<Props> = props => {
+  h1 {
+    color: white;
+    font-size: 35px;
+    font-family: "AkzidensGrotesk", sans-serif;
+    margin: 100px;
+    width: 100vw;
+    text-align: center;
 
-    return (
-        <>
-            <Container>
-                {/* <LandingNav>
-                <Logo src={LogoDark} />
-                <Link style={{ 'marginLeft': 'auto' }} to='/app'>
-                    <AppButton primary text='Launch App' height='40px' width='120px' />
-                </Link>
-            </LandingNav> */}
-                <Nav pageName='Landing' theme={props.theme} />
-                <InnerContainer>
-                    <InfoContainer>
-                        <InfoHeading>ElevatePAD</InfoHeading>
-                        <InfoDescription>Imagine projects that have a positive impact on humanity — where your average person can understand their value. Elevate will work with teams that share this vision of a world where Web 3.0 can positively transform the future.</InfoDescription>
-                        <div style={{ 'minWidth': '100%' }}>
-                            <Link to='/elevate-pad'>
-                                <AppButton text='Launch App' primary height='40px' width='120px' />
-                            </Link>
-                        </div>
-                    </InfoContainer>
-                    <ImageContainer>
-                        <Graphic src={LaunchPadGraphic} />
-                    </ImageContainer>
-                </InnerContainer>
-            </Container>
-            <Footer theme={props.theme} />
-        </>
-    )
-}
+    @media screen and (max-width: 500px) {
+      font-size: 27.5px;
+    }
+  }
+
+  img {
+    width: 128px;
+    height: 128px;
+  }
+`;
+
+const Landing: React.FC<Props> = (props) => {
+  return (
+    <>
+      <Container>
+        <h1>ELEVATE</h1>
+        <img src="logo512.png" />
+        <h1>WEBSITE UNDER CONSTRUCTION</h1>
+      </Container>
+    </>
+  );
+};
 
 export default Landing;
