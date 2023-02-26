@@ -11,6 +11,14 @@ code {
 }
 
 @font-face {
+  font-family: 'Azonix';
+  src: local('Azonix'), url(./Fonts/Azonix.otf) format('opentype');
+  font-weight: bold;
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+
+@font-face {
   font-family: 'AkzidenzGrotesk';
   src: local('AkzidenzGrotesk-BoldExtended'), url(./Fonts/AkzidenzGrotesk-BoldExtended.otf) format('opentype');
   font-weight: bold;

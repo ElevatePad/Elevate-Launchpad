@@ -47,7 +47,7 @@ const Container = styled.div<Pick<Props, "theme">>`
   h1 {
     color: white;
     font-size: 35px;
-    font-family: "AkzidensGrotesk", sans-serif;
+    font-family: "Azonix", sans-serif;
     margin: 100px;
     width: 100vw;
     text-align: center;
@@ -59,7 +59,6 @@ const Container = styled.div<Pick<Props, "theme">>`
 
   img {
     width: 128px;
-    height: 128px;
   }
 `;
 
@@ -68,7 +67,7 @@ const Landing: React.FC<Props> = (props) => {
     <>
       <Container>
         <h1>ELEVATE</h1>
-        <img src="logo512.png" />
+        <img src="logoelevate.png" />
         <h1>WEBSITE UNDER CONSTRUCTION</h1>
       </Container>
     </>
