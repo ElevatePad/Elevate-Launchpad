@@ -33,14 +33,14 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Landing theme={theme} />} />
-            {/* <Route path='/elevate-pad' element={<Main theme={theme}/>}/>
-            <Route path='/dashboard' element={<Dashboard theme={theme}/>}/>
-            <Route path='/elevate-meme' element={<UnderConstruction theme={theme}/>}/>
-            <Route path='/elevate-dao' element={<UnderConstruction theme={theme}/>}/>
-            <Route path='/elevate-lock' element={<LockerLanding theme={theme}/>}/>
-            <Route path='/about' element={<UnderConstruction theme={theme}/>}/>
-            <Route path='/partners' element={<Partners theme={theme}/>}/>
-            <Route path='/nft' element={<NFTs theme={theme}/>}/> */}
+            <Route path="/elevate-pad" element={<Main theme={theme} />} />
+            <Route path="/dashboard" element={<Dashboard theme={theme} />} />
+            <Route path="/elevate-meme" element={<UnderConstruction theme={theme} />} />
+            <Route path="/elevate-dao" element={<UnderConstruction theme={theme} />} />
+            <Route path="/elevate-lock" element={<LockerLanding theme={theme} />} />
+            <Route path="/about" element={<UnderConstruction theme={theme} />} />
+            <Route path="/partners" element={<Partners theme={theme} />} />
+            <Route path="/nft" element={<NFTs theme={theme} />} />
           </Routes>
         </Router>
       </ThemeProvider>
