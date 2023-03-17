@@ -27,6 +27,7 @@ const Container = styled.div<Pick<Props, "theme">>`
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    position: relative;
   }
 
   .top-container::after {
@@ -40,6 +41,13 @@ const Container = styled.div<Pick<Props, "theme">>`
     background-size: cover;
     background-repeat: no-repeat;
     opacity: 0.25;
+  }
+
+  .mid-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #5927b4;
   }
 `;
 
@@ -169,12 +177,12 @@ const WelcomeContainer = styled.div`
   }
 
   .coin {
-    opacity: 0.75;
+    opacity: 1;
     position: absolute;
     left: 0;
-    top: 150px;
-    height: 750px;
-    width: 500px;
+    top: 200px;
+    height: 650px;
+    width: 475px;
 
     @media screen and (max-width: 1000px) {
       opacity: 0.5;
@@ -254,6 +262,139 @@ const WelcomeExtendedContainer = styled.div`
   }
 `;
 
+const RoadmapContainer = styled.div`
+  width: 100%;
+  display: flex;
+  padding: 50px 100px;
+  z-index: 8;
+  justify-content: center;
+  flex-wrap: wrap;
+  @media screen and (max-width: 1000px) {
+    padding: 0px 50px;
+  }
+
+  h1 {
+    font-size: 50px;
+    color: white;
+    width: 100%;
+    font-family: "Azonix", sans-serif;
+    text-align: center;
+  }
+
+  .roadmap-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+
+    img {
+      width: 70%;
+      z-index: 8;
+
+      @media screen and (max-width: 1200px) {
+        width: 100%;
+      }
+
+      @media screen and (max-width: 850px) {
+        width: 125%;
+      }
+
+      @media screen and (max-width: 650px) {
+        width: 90vw;
+      }
+    }
+  }
+`;
+
+const CRFContainer = styled.div`
+  width: 100%;
+  display: flex;
+  padding: 25px 100px;
+  z-index: 5;
+  position: relative;
+  @media screen and (max-width: 1000px) {
+    padding: 0px 50px;
+  }
+
+  img.coral-circle {
+    right: -50px;
+    top: -150px;
+    height: 900px;
+    width: 850px;
+    z-index: 6;
+    position: absolute;
+
+    @media screen and (max-width: 1000px) {
+      opacity: 0.5;
+    }
+  }
+
+  .crf-content {
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+
+    @media screen and (max-width: 1000px) {
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 50px;
+      color: white;
+      font-family: "Azonix", sans-serif;
+      width: 100%;
+      margin-bottom: 10px;
+      z-index: 7;
+    }
+
+    p {
+      margin-top: 0px;
+      font-size: 15px;
+      width: 100%;
+      font-weight: bold;
+      color: white;
+      z-index: 7;
+    }
+
+    img {
+      width: 90px;
+      z-index: 7;
+    }
+  }
+`;
+
+const EcosystemContainer = styled.div`
+  width: 100%;
+  display: flex;
+  padding: 50px 100px 25px 100px;
+  z-index: 7;
+  position: relative;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .ecosystem-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 60%;
+
+      @media screen and (max-width: 1000px) {
+        width: 100%;
+      }
+    }
+  }
+
+  h1 {
+    font-size: 50px;
+    color: white;
+    width: 100%;
+    font-family: "Azonix", sans-serif;
+    text-align: center;
+  }
+`;
+
 const Landing: React.FC<Props> = (props) => {
   return (
     <>
@@ -318,6 +459,35 @@ const Landing: React.FC<Props> = (props) => {
               </p>
             </div>
           </WelcomeExtendedContainer>
+        </div>
+        <div className="mid-container">
+          <RoadmapContainer>
+            <h1>ROADMAP</h1>
+            <div className="roadmap-container">
+              <img src="roadmap.png" />
+            </div>
+          </RoadmapContainer>
+          <CRFContainer>
+            <img src="coral-circle.png" className="coral-circle" />
+            <div className="crf-content">
+              <h1>CORAL RESTORATION FOUNDATION HISTORY</h1>
+              <p>
+                Before Elevate, Ponyo Impact was utilized its innovative auto-impact contract to raise $850,000 for the Coral Restoration Foundation,
+                the largest reef restoration organization in the world.
+              </p>
+              <p>
+                We believe marine conservation is a vital element in adressing climate change. Therefor ElevatePAD will continue their partnerships
+                automatically donating 1% of every $ELEV Token transaction in ETH to CRF.
+              </p>
+              <img src="crf-logo.png" />
+            </div>
+          </CRFContainer>
+          <EcosystemContainer>
+            <h1>THE ECOSYSTEM</h1>
+            <div className="ecosystem-image-container">
+              <img src="ecosystem.png" />
+            </div>
+          </EcosystemContainer>
         </div>
       </Container>
     </>
