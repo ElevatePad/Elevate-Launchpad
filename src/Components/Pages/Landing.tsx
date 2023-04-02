@@ -147,6 +147,10 @@ const HeadingContainer = styled.div`
     width: 100%;
     z-index: 2;
 
+    a {
+      text-decoration: none;
+    }
+
     span {
       font-size: 10px;
       font-weight: bold;
@@ -469,7 +473,9 @@ const Landing: React.FC<Props> = (props) => {
               <img className="rocket" src="rocket.png"></img>
               <h1>THE FIRST COMMUNITY DRIVEN IMPACT LAUNCHPAD.</h1>
               <div className="button-cont">
-                <span>Whitepaper</span>
+                <a href="https://elevatepad.gitbook.io/elevate-usdelev/" target="_blank" rel="noreferrer">
+                  <span>Whitepaper</span>
+                </a>
                 <span>Launch DAO</span>
               </div>
             </div>
