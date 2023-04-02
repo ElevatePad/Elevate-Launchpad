@@ -40,7 +40,7 @@ const Container = styled.div<Pick<Props, "theme">>`
     background-image: url("top-bg.png");
     background-size: cover;
     background-repeat: no-repeat;
-    opacity: 0.25;
+    opacity: 0.85;
   }
 
   .mid-container {
@@ -54,7 +54,7 @@ const Container = styled.div<Pick<Props, "theme">>`
 const Nav = styled.div`
   align-self: flex-start;
   width: 100%;
-  padding: 30px 100px;
+  padding: 30px 12.5%;
   display: flex;
   font-family: "Azonix", sans-serif;
 
@@ -66,8 +66,7 @@ const Nav = styled.div`
   justify-content: center;
 
   img {
-    width: 145px;
-    height: 50px;
+    height: 40px;
   }
 
   div {
@@ -113,17 +112,20 @@ const Nav = styled.div`
 const HeadingContainer = styled.div`
   width: 100%;
   display: flex;
-  padding: 60px 100px 40px 100px;
+  padding: 60px 12.5% 40px 12.5%;
   position: relative;
 
   @media screen and (max-width: 1000px) {
-    padding: 60px 50px 40px 50px;
+    padding: 60px 20px 40px 20px;
   }
 
   div {
-    width: 50%;
+    width: 70%;
     display: flex;
     flex-wrap: wrap;
+    @media screen and (max-width: 1000px) {
+      width: 100%;
+    }
   }
 
   .rocket {
@@ -131,9 +133,9 @@ const HeadingContainer = styled.div`
     right: 0;
     z-index: 1;
     top: 50px;
-    height: 1000px;
-    width: 750px;
-    opacity: 0.75;
+    height: 60em;
+    width: 45em;
+    opacity: 0.85;
 
     @media screen and (max-width: 1000px) {
       opacity: 0.5;
@@ -146,22 +148,32 @@ const HeadingContainer = styled.div`
     z-index: 2;
 
     span {
-      font-size: 15px;
+      font-size: 10px;
       font-weight: bold;
       color: white;
+      text-transform: uppercase;
       border: 2px solid white;
-      padding: 7.5px 12.5px;
+      padding: 12.5px 15px;
       border-radius: 15px;
       margin-right: 10px;
+      font-family: "Monument", sans-serif;
+
+      @media screen and (max-width: 1000px) {
+      }
     }
   }
 
   h1 {
-    font-size: 50px;
-    width: 80%;
-    font-family: "Azonix", sans-serif;
+    font-size: 3.6rem;
+    width: 90%;
+    font-family: "Monument", sans-serif;
     z-index: 2;
+    margin-bottom: 0;
     color: white;
+
+    @media screen and (max-width: 550px) {
+      font-size: 2.5rem;
+    }
   }
 `;
 
@@ -170,26 +182,26 @@ const WelcomeContainer = styled.div`
   display: flex;
   z-index: 2;
   position: relative;
-  padding: 0 100px;
+  padding: 0 12.5% 2.5vw 12.5%;
 
   @media screen and (max-width: 1000px) {
-    padding: 0px 50px;
+    padding: 0px 20px;
   }
 
   .coin {
     opacity: 1;
     position: absolute;
     left: 0;
-    top: 200px;
-    height: 650px;
-    width: 475px;
+    top: 450px;
+    height: 50em;
+    width: 35em;
 
     @media screen and (max-width: 1000px) {
       opacity: 0.5;
     }
 
     @media screen and (max-width: 750px) {
-      display: none;
+      /* display: none; */
     }
   }
 
@@ -204,29 +216,35 @@ const WelcomeContainer = styled.div`
   }
 
   img {
-    width: 250px;
+    width: 50%;
   }
 
   h1 {
-    font-size: 15px;
+    font-size: 1.3rem;
     width: 100%;
     color: white;
+    font-family: "Monument", sans-serif;
   }
 
   .info-container {
     width: 100%;
+    padding-bottom: 150px;
+    padding-top: 50px;
 
     p:first-child {
       margin-top: 10px;
     }
 
     p {
-      font-size: 15px;
+      font-size: 1rem;
+      font-family: "Archivo", sans-serif;
       z-index: 2;
-      font-weight: bold;
-      width: 100%;
+      font-weight: 500;
+      width: 90%;
       color: white;
-      margin-top: 5px;
+      line-height: 30px;
+      letter-spacing: 1px;
+      margin-top: 15px;
     }
   }
 `;
@@ -234,15 +252,15 @@ const WelcomeContainer = styled.div`
 const WelcomeExtendedContainer = styled.div`
   width: 100%;
   display: flex;
-  padding: 50px 100px;
+  padding: 30px 12.5% 50px 12.5%;
 
   @media screen and (max-width: 1000px) {
-    padding: 50px 50px;
+    padding: 30px 20px;
   }
 
   z-index: 3;
   div {
-    width: 60%;
+    width: 55%;
     display: flex;
     margin-left: auto;
     flex-wrap: wrap;
@@ -253,32 +271,47 @@ const WelcomeExtendedContainer = styled.div`
   }
 
   p {
-    font-size: 15px;
-    width: 100%;
-    font-weight: bold;
-
+    font-size: 1rem;
+    width: 90%;
+    font-weight: 500;
+    font-family: "Archivo", sans-serif;
     color: white;
-    margin-top: 5px;
+    margin-top: 40px;
+    margin-left: auto;
+    line-height: 30px;
+    letter-spacing: 1px;
+
+    @media screen and (max-width: 1000px) {
+      width: 100%;
+      margin-left: none;
+    }
   }
 `;
 
 const RoadmapContainer = styled.div`
   width: 100%;
   display: flex;
-  padding: 50px 100px;
+  padding: 100px 12.5%;
   z-index: 8;
   justify-content: center;
   flex-wrap: wrap;
   @media screen and (max-width: 1000px) {
-    padding: 0px 50px;
+    padding: 0px 20px;
   }
 
   h1 {
-    font-size: 50px;
-    color: white;
-    width: 100%;
-    font-family: "Azonix", sans-serif;
+    font-size: 3.6rem;
+    width: 90%;
+    font-family: "Monument", sans-serif;
+    z-index: 2;
+
     text-align: center;
+    margin-bottom: 0;
+    color: white;
+
+    @media screen and (max-width: 1000px) {
+      font-size: 2.5rem;
+    }
   }
 
   .roadmap-container {
@@ -309,7 +342,7 @@ const RoadmapContainer = styled.div`
 const CRFContainer = styled.div`
   width: 100%;
   display: flex;
-  padding: 25px 100px;
+  padding: 25px 12.5%;
   z-index: 5;
   position: relative;
   @media screen and (max-width: 1000px) {
@@ -318,9 +351,9 @@ const CRFContainer = styled.div`
 
   img.coral-circle {
     right: -50px;
-    top: -150px;
-    height: 900px;
-    width: 850px;
+    top: -12.5%;
+    height: 60em;
+    width: 60em;
     z-index: 6;
     position: absolute;
 
@@ -339,26 +372,35 @@ const CRFContainer = styled.div`
     }
 
     h1 {
-      font-size: 50px;
+      font-size: 3.6rem;
+      width: 90%;
+      font-family: "Monument", sans-serif;
+      z-index: 10;
+      margin-bottom: 0;
       color: white;
-      font-family: "Azonix", sans-serif;
-      width: 100%;
-      margin-bottom: 10px;
-      z-index: 7;
+
+      @media screen and (max-width: 1000px) {
+        font-size: 2rem;
+        width: 100%;
+      }
     }
 
     p {
-      margin-top: 0px;
-      font-size: 15px;
-      width: 100%;
-      font-weight: bold;
+      font-size: 1rem;
+      font-family: "Archivo", sans-serif;
+      z-index: 10;
+      font-weight: 500;
+      width: 90%;
       color: white;
-      z-index: 7;
+      line-height: 30px;
+      letter-spacing: 1px;
+      margin-top: 15px;
     }
 
     img {
       width: 90px;
       z-index: 7;
+      margin-top: 20px;
     }
   }
 `;
@@ -366,11 +408,15 @@ const CRFContainer = styled.div`
 const EcosystemContainer = styled.div`
   width: 100%;
   display: flex;
-  padding: 50px 100px 25px 100px;
+  padding: 200px 12.5% 25px 12.5%;
   z-index: 7;
   position: relative;
   justify-content: center;
   flex-wrap: wrap;
+
+  @media screen and (max-width: 1000px) {
+    padding: 50px 20px;
+  }
 
   .ecosystem-image-container {
     width: 100%;
@@ -387,11 +433,18 @@ const EcosystemContainer = styled.div`
   }
 
   h1 {
-    font-size: 50px;
-    color: white;
-    width: 100%;
-    font-family: "Azonix", sans-serif;
+    font-size: 3.6rem;
     text-align: center;
+    width: 90%;
+    font-family: "Monument", sans-serif;
+    z-index: 2;
+    margin-bottom: 0;
+    color: white;
+
+    @media screen and (max-width: 1000px) {
+      font-size: 2rem;
+      width: 100%;
+    }
   }
 `;
 
@@ -414,7 +467,7 @@ const Landing: React.FC<Props> = (props) => {
           <HeadingContainer>
             <div>
               <img className="rocket" src="rocket.png"></img>
-              <h1>THE FIRST COMMUNITY DRIVEN IMPACT LAUNCHPAD</h1>
+              <h1>THE FIRST COMMUNITY DRIVEN IMPACT LAUNCHPAD.</h1>
               <div className="button-cont">
                 <span>Whitepaper</span>
                 <span>Launch DAO</span>
@@ -425,7 +478,7 @@ const Landing: React.FC<Props> = (props) => {
             <div>
               <img src="coin.png" className="coin" />
               <h1>WELCOME TO</h1>
-              <img src="logo.png" />
+              <img src="logo-text.png" />
               <div className="info-container">
                 <p>
                   ElevatePAD is a community run, decentralized IDO platform for legitimate and impactful ESG (Environmental, Social and Governance)
