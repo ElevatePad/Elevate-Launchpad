@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import LogoDark from "../Images/Logo-Dark.png";
 import Button from "../Common/Button";
@@ -114,6 +114,8 @@ const Nav = styled.div`
     margin: 0px;
     font-weight: bold;
     color: white;
+    z-index: 100;
+    cursor: pointer;
 
     @media screen and (max-width: 1000px) {
       display: none;
@@ -469,6 +471,11 @@ const EcosystemContainer = styled.div`
 `;
 
 const Landing: React.FC<Props> = (props) => {
+  const aboutRef = useRef(null);
+  const crfRef = useRef(null);
+  const roadmapRef = useRef(null);
+  const ecosystemRef = useRef(null);
+
   return (
     <>
       <Container>
@@ -476,10 +483,18 @@ const Landing: React.FC<Props> = (props) => {
           <Nav>
             <img src="logo.png" />
             <div>
-              <h1 className="item">ABOUT</h1>
-              <h1 className="item">CRF</h1>
-              <h1 className="item">ROADMAP</h1>
-              <h1 className="item">ECOSYSTEM</h1>
+              <h1 onClick={() => aboutRef.current.scrollIntoView({ behavior: "smooth" })} className="item">
+                ABOUT
+              </h1>
+              <h1 onClick={() => crfRef.current.scrollIntoView({ behavior: "smooth" })} className="item">
+                CRF
+              </h1>
+              <h1 onClick={() => roadmapRef.current.scrollIntoView({ behavior: "smooth" })} className="item">
+                ROADMAP
+              </h1>
+              <h1 onClick={() => ecosystemRef.current.scrollIntoView({ behavior: "smooth" })} className="item">
+                ECOSYSTEM
+              </h1>
               <h1 className="item">THE DAPPS</h1>
               <span>LAUNCH DAO</span>
             </div>
@@ -498,7 +513,7 @@ const Landing: React.FC<Props> = (props) => {
               </div>
             </div>
           </HeadingContainer>
-          <WelcomeContainer>
+          <WelcomeContainer ref={aboutRef}>
             <div>
               <img src="coin.png" className="coin" />
               <h1>WELCOME TO</h1>
@@ -538,13 +553,13 @@ const Landing: React.FC<Props> = (props) => {
           </WelcomeExtendedContainer>
         </div>
         <div className="mid-container">
-          <RoadmapContainer>
+          <RoadmapContainer ref={roadmapRef}>
             <h1>ROADMAP</h1>
             <div className="roadmap-container">
               <img src="roadmap.png" />
             </div>
           </RoadmapContainer>
-          <CRFContainer>
+          <CRFContainer ref={crfRef}>
             <img src="coral-circle.png" className="coral-circle" />
             <div className="crf-content">
               <h1>CORAL RESTORATION FOUNDATION HISTORY</h1>
@@ -559,7 +574,7 @@ const Landing: React.FC<Props> = (props) => {
               <img src="crf-logo.png" />
             </div>
           </CRFContainer>
-          <EcosystemContainer>
+          <EcosystemContainer ref={ecosystemRef}>
             <h1>THE ECOSYSTEM</h1>
             <div className="ecosystem-image-container">
               <img src="ecosystem.png" />
