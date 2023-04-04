@@ -59,7 +59,11 @@ const Nav = styled.div`
   font-family: "Azonix", sans-serif;
 
   @media screen and (max-width: 1000px) {
-    padding: 30px 50px;
+    padding: 30px 20px;
+  }
+
+  @media screen and (max-width: 350px) {
+    padding: 30px 20px;
   }
 
   align-items: center;
@@ -67,6 +71,14 @@ const Nav = styled.div`
 
   img {
     height: 40px;
+
+    @media screen and (max-width: 550px) {
+      height: 25px;
+    }
+
+    @media screen and (max-width: 1000px) {
+      height: 20px;
+    }
   }
 
   div {
@@ -149,19 +161,19 @@ const HeadingContainer = styled.div`
 
     a {
       text-decoration: none;
-    }
-
-    span {
+      border: 2px solid white;
+      padding: 12.5px 15px;
+      border-radius: 15px;
       font-size: 10px;
       font-weight: bold;
       color: white;
       text-transform: uppercase;
-      border: 2px solid white;
-      padding: 12.5px 15px;
-      border-radius: 15px;
+
       margin-right: 10px;
       font-family: "Monument", sans-serif;
+    }
 
+    span {
       @media screen and (max-width: 1000px) {
       }
     }
@@ -177,6 +189,10 @@ const HeadingContainer = styled.div`
 
     @media screen and (max-width: 550px) {
       font-size: 2.5rem;
+    }
+
+    @media screen and (max-width: 350px) {
+      font-size: 2rem;
     }
   }
 `;
@@ -476,7 +492,9 @@ const Landing: React.FC<Props> = (props) => {
                 <a href="https://elevatepad.gitbook.io/elevate-usdelev/" target="_blank" rel="noreferrer">
                   <span>Whitepaper</span>
                 </a>
-                <span>Launch DAO</span>
+                <a>
+                  <span>Launch DAO</span>
+                </a>
               </div>
             </div>
           </HeadingContainer>
