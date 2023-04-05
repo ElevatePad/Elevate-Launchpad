@@ -544,10 +544,10 @@ const Landing: React.FC<Props> = (props) => {
                 becoming the premier decentralized launchpad for legitimate and impactful ESG projects.
               </p>
               <p>
-                ElevatePAD was initiall developed by the founders of Ponyo impact, an innovative Auto-Impact token, with a focus on Coral Restoration.
-                The Ponyo Impact team had a greater vision to help other legitimate ESG impact projects come to life. Beyond the initail development
-                and conception of ElevatePAD, our future lies in the collective voice of our community that will push forward the ethos of DeFi. The
-                backbone of Elevate is our strong community and potential gloabl reach.
+                ElevatePAD was initially developed by the founders of Ponyo impact, an innovative Auto-Impact token, with a focus on Coral
+                Restoration. The Ponyo Impact team had a greater vision to help other legitimate ESG impact projects come to life. Beyond the initail
+                development and conception of ElevatePAD, our future lies in the collective voice of our community that will push forward the ethos of
+                DeFi. The backbone of Elevate is our strong community and potential global reach.
               </p>
             </div>
           </WelcomeExtendedContainer>
@@ -564,11 +564,11 @@ const Landing: React.FC<Props> = (props) => {
             <div className="crf-content">
               <h1>CORAL RESTORATION FOUNDATION HISTORY</h1>
               <p>
-                Before Elevate, Ponyo Impact was utilized its innovative auto-impact contract to raise $850,000 for the Coral Restoration Foundation,
-                the largest reef restoration organization in the world.
+                Before Elevate, Ponyo Impact utilized its innovative, auto-impact contract to raise $850,000 for the Coral Restoration Foundation, the
+                largest reef restoration organization in the world.
               </p>
               <p>
-                We believe marine conservation is a vital element in adressing climate change. Therefor ElevatePAD will continue their partnerships
+                We believe marine conservation is a vital element in adressing climate change. Therefore ElevatePAD will continue their partnerships
                 automatically donating 1% of every $ELEV Token transaction in ETH to CRF.
               </p>
               <img src="crf-logo.png" />
