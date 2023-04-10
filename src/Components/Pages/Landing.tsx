@@ -580,6 +580,9 @@ const Landing: React.FC<Props> = (props) => {
               <img src="ecosystem.png" />
             </div>
           </EcosystemContainer>
+          <div style={{ width: "100%", textAlign: "center", padding: "10px 0px", color: "white", fontFamily: "Archivo" }}>
+            Contract Address: 0x045109cf1be9edec048aa0b3d7a323154a1aea65
+          </div>
         </div>
       </Container>
     </>
